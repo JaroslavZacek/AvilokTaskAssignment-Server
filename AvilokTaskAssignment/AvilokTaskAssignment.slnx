@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="AvilokTaskAssignment.Api/AvilokTaskAssignment.Api.csproj" />
+  <Project Path="AvilokTaskAssignment.Data/AvilokTaskAssignment.Data.csproj" />
+</Solution>
