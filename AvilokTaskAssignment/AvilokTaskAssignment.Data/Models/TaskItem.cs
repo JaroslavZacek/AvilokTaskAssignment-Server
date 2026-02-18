@@ -4,7 +4,7 @@ using System.Text;
 
 namespace AvilokTaskAssignment.Data.Models
 {
-    internal class TaskItem
+    public class TaskItem
     {
         /// <summary>
         /// Primární klíč zakázky.

@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Identity;
 
 namespace AvilokTaskAssignment.Data.Models
 {
-    internal class ApplicationUser : IdentityUser<Guid>
+    public class ApplicationUser : IdentityUser<Guid>
     {
         /// <summary>
         /// Celé jméno uživatele.

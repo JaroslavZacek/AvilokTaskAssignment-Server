@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Identity;
 
 namespace AvilokTaskAssignment.Data.Models
 {
-    internal class ApplicationRole : IdentityRole<Guid>
+    public class ApplicationRole : IdentityRole<Guid>
     {
     }
 }
