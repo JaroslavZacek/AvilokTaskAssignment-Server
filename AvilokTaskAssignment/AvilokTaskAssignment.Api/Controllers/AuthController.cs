@@ -21,5 +21,12 @@ namespace AvilokTaskAssignment.Api.Controllers
             await _authManager.RegisterAsync(registerUserDto);
             return Ok("Uživatel vytvořen.");
         }
+
+        [HttpPost("login")]
+        public async Task<IActionResult> Login(LoginDto loginDto)
+        {
+            await _authManager.LoginAsync(loginDto);
+            return Ok("Přihlášení úspěšné.");
+        }
     }
 }
