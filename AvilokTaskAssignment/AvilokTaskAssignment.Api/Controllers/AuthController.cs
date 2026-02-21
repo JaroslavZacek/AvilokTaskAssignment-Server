@@ -28,5 +28,11 @@ namespace AvilokTaskAssignment.Api.Controllers
             await _authManager.LoginAsync(loginDto);
             return Ok("Přihlášení úspěšné.");
         }
+
+        public async Task<IActionResult> Logout()
+        {
+            await _authManager.LogoutAsync();
+            return Ok("Odhlášení úspěšné.");
+        }
     }
 }
