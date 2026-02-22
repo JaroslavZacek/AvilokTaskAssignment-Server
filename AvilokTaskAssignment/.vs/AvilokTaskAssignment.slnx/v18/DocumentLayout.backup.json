@@ -32,7 +32,7 @@
               "RelativeDocumentMoniker": "AvilokTaskAssignment.Api\\Controllers\\AuthController.cs",
               "ToolTip": "C:\\Users\\jaros\\Documents\\GitHub\\AvilokTaskAssignment-Server\\AvilokTaskAssignment\\AvilokTaskAssignment.Api\\Controllers\\AuthController.cs",
               "RelativeToolTip": "AvilokTaskAssignment.Api\\Controllers\\AuthController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAbAAAAAAAAAA==",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAQwCIAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-20T21:40:27.871Z",
               "EditorCaption": ""
@@ -47,8 +47,7 @@
               "RelativeToolTip": "AvilokTaskAssignment.Api\\Managers\\AuthManager.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAABYAAABnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-18T16:19:27.522Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-18T16:19:27.522Z"
             },
             {
               "$type": "Document",

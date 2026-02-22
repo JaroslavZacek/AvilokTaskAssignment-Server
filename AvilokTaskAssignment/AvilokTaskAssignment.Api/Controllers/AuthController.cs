@@ -29,6 +29,7 @@ namespace AvilokTaskAssignment.Api.Controllers
             return Ok("Přihlášení úspěšné.");
         }
 
+        [HttpPost("logout")]
         public async Task<IActionResult> Logout()
         {
             await _authManager.LogoutAsync();
