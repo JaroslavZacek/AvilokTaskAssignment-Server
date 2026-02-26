@@ -8,7 +8,7 @@ using AvilokTaskAssignment.Data.Models;
 
 namespace AvilokTaskAssignment.Data
 {
-    internal class ApplicationDbContext : IdentityDbContext<ApplicationUser, ApplicationRole, Guid>
+    public class ApplicationDbContext : IdentityDbContext<ApplicationUser, ApplicationRole, Guid>
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)

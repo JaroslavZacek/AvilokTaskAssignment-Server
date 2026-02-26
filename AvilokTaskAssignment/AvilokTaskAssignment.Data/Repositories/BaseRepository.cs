@@ -10,7 +10,7 @@ using System.Linq.Expressions;
 
 namespace AvilokTaskAssignment.Data.Repositories
 {
-    internal class BaseRepository<T> : IBaseRepository<T> where T : class
+    public class BaseRepository<T> : IBaseRepository<T> where T : class
     {
         protected readonly ApplicationDbContext _context;
         protected readonly DbSet<T> _dbSet;

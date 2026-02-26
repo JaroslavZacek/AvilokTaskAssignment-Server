@@ -8,7 +8,7 @@ using AvilokTaskAssignment.Data.Models;
 
 namespace AvilokTaskAssignment.Data.Repositories
 {
-    internal class TaskRepository : BaseRepository<TaskItem>, ITaskRepository
+    public class TaskRepository : BaseRepository<TaskItem>, ITaskRepository
     {
         public TaskRepository(ApplicationDbContext context) : base(context)
         { 

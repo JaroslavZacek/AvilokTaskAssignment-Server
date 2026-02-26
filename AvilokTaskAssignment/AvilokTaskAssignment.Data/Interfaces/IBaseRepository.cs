@@ -6,7 +6,7 @@ using System.Linq.Expressions;
 
 namespace AvilokTaskAssignment.Data.Interfaces
 {
-    internal interface IBaseRepository<T> where T : class
+    public interface IBaseRepository<T> where T : class
     {
         Task<T> GetByIdAsync(Guid id);
         Task<IEnumerable<T>> GetAllAsync();

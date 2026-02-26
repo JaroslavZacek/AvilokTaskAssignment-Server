@@ -6,7 +6,7 @@ using AvilokTaskAssignment.Data.Models;
 
 namespace AvilokTaskAssignment.Data.Interfaces
 {
-    internal interface ITaskRepository : IBaseRepository<TaskItem>
+    public interface ITaskRepository : IBaseRepository<TaskItem>
     {
         Task<IEnumerable<TaskItem>> GetFilteredAsync(
             WorkType? workType,
