@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
 
+using AvilokTaskAssignment.Api.Seed;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -80,6 +81,20 @@ builder.Services.AddSwaggerGen();
 
 
 var app = builder.Build();
+
+#region Set admin
+
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+
+    var userManager = services.GetRequiredService<UserManager<ApplicationUser>>();
+    var roleManager = services.GetRequiredService<RoleManager<ApplicationRole>>();
+
+    await IdentitySeeder.SeedAsync(userManager, roleManager);
+}
+
+#endregion
 
 #region Middleware pipeline
 
