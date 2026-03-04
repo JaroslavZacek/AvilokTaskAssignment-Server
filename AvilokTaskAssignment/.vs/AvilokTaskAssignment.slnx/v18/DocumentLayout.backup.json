@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "C:\\Users\\jaros\\Documents\\GitHub\\AvilokTaskAssignment-Server\\AvilokTaskAssignment\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{8E88A849-C2ED-0BD5-1124-4616082E5BAB}|AvilokTaskAssignment.Api\\AvilokTaskAssignment.Api.csproj|c:\\users\\jaros\\documents\\github\\aviloktaskassignment-server\\aviloktaskassignment\\aviloktaskassignment.api\\managers\\taskmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8E88A849-C2ED-0BD5-1124-4616082E5BAB}|AvilokTaskAssignment.Api\\AvilokTaskAssignment.Api.csproj|solutionrelative:aviloktaskassignment.api\\managers\\taskmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8E88A849-C2ED-0BD5-1124-4616082E5BAB}|AvilokTaskAssignment.Api\\AvilokTaskAssignment.Api.csproj|c:\\users\\jaros\\documents\\github\\aviloktaskassignment-server\\aviloktaskassignment\\aviloktaskassignment.api\\managers\\authmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8E88A849-C2ED-0BD5-1124-4616082E5BAB}|AvilokTaskAssignment.Api\\AvilokTaskAssignment.Api.csproj|solutionrelative:aviloktaskassignment.api\\managers\\authmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{8E88A849-C2ED-0BD5-1124-4616082E5BAB}|AvilokTaskAssignment.Api\\AvilokTaskAssignment.Api.csproj|c:\\users\\jaros\\documents\\github\\aviloktaskassignment-server\\aviloktaskassignment\\aviloktaskassignment.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8E88A849-C2ED-0BD5-1124-4616082E5BAB}|AvilokTaskAssignment.Api\\AvilokTaskAssignment.Api.csproj|solutionrelative:aviloktaskassignment.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -19,15 +27,39 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "TaskManager.cs",
+              "DocumentMoniker": "C:\\Users\\jaros\\Documents\\GitHub\\AvilokTaskAssignment-Server\\AvilokTaskAssignment\\AvilokTaskAssignment.Api\\Managers\\TaskManager.cs",
+              "RelativeDocumentMoniker": "AvilokTaskAssignment.Api\\Managers\\TaskManager.cs",
+              "ToolTip": "C:\\Users\\jaros\\Documents\\GitHub\\AvilokTaskAssignment-Server\\AvilokTaskAssignment\\AvilokTaskAssignment.Api\\Managers\\TaskManager.cs",
+              "RelativeToolTip": "AvilokTaskAssignment.Api\\Managers\\TaskManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-03T14:49:40.376Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AuthManager.cs",
+              "DocumentMoniker": "C:\\Users\\jaros\\Documents\\GitHub\\AvilokTaskAssignment-Server\\AvilokTaskAssignment\\AvilokTaskAssignment.Api\\Managers\\AuthManager.cs",
+              "RelativeDocumentMoniker": "AvilokTaskAssignment.Api\\Managers\\AuthManager.cs",
+              "ToolTip": "C:\\Users\\jaros\\Documents\\GitHub\\AvilokTaskAssignment-Server\\AvilokTaskAssignment\\AvilokTaskAssignment.Api\\Managers\\AuthManager.cs",
+              "RelativeToolTip": "AvilokTaskAssignment.Api\\Managers\\AuthManager.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-03T14:49:06.033Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\jaros\\Documents\\GitHub\\AvilokTaskAssignment-Server\\AvilokTaskAssignment\\AvilokTaskAssignment.Api\\Program.cs",
               "RelativeDocumentMoniker": "AvilokTaskAssignment.Api\\Program.cs",
               "ToolTip": "C:\\Users\\jaros\\Documents\\GitHub\\AvilokTaskAssignment-Server\\AvilokTaskAssignment\\AvilokTaskAssignment.Api\\Program.cs",
               "RelativeToolTip": "AvilokTaskAssignment.Api\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-26T22:33:37.91Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-26T22:33:37.91Z"
             }
           ]
         }
