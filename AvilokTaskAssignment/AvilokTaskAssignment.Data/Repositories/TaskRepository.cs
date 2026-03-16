@@ -40,5 +40,13 @@ namespace AvilokTaskAssignment.Data.Repositories
             return await query.ToListAsync();
         }
 
+        public override async Task<IEnumerable<TaskItem>> GetAllAsync()
+        {
+            return await _context.TaskItems
+                .Include(t => t.CreatedBy)
+                .Include(t => t.AssignedUserId)
+                .ToListAsync();
+        }
+
     }
 }

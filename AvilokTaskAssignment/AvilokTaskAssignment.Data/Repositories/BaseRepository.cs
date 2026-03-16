@@ -24,7 +24,7 @@ namespace AvilokTaskAssignment.Data.Repositories
         public async Task AddAsync(T entity)
             => await _dbSet.AddAsync(entity);
 
-        public async Task<IEnumerable<T>> GetAllAsync()
+        public virtual async Task<IEnumerable<T>> GetAllAsync()
             => await _dbSet.ToListAsync();
 
         public async Task<T> GetByIdAsync(Guid id)
