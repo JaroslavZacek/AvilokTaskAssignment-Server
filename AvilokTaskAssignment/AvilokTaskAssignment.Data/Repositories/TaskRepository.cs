@@ -22,7 +22,7 @@ namespace AvilokTaskAssignment.Data.Repositories
         {
             var query = _context.TaskItems
                 .Include(t => t.CreatedBy)
-                .Include(t => t.AssignedUserId)
+                .Include(t => t.AssignedUser)
                 .AsQueryable();
 
             if (workType.HasValue)
@@ -38,14 +38,6 @@ namespace AvilokTaskAssignment.Data.Repositories
                 query = query.Where(t => t.Status == status.Value);
 
             return await query.ToListAsync();
-        }
-
-        public override async Task<IEnumerable<TaskItem>> GetAllAsync()
-        {
-            return await _context.TaskItems
-                .Include(t => t.CreatedBy)
-                .Include(t => t.AssignedUserId)
-                .ToListAsync();
         }
 
     }

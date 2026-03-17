@@ -8,7 +8,6 @@ namespace AvilokTaskAssignment.Data.Interfaces
 {
     public interface ITaskRepository : IBaseRepository<TaskItem>
     {
-        Task<IEnumerable<TaskItem>> GetAllAsync();
         Task<IEnumerable<TaskItem>> GetFilteredAsync(
             WorkType? workType,
             Guid? createdById,

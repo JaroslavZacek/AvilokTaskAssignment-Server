@@ -19,7 +19,7 @@ namespace AvilokTaskAssignment.Api.Managers
         #region GET
 
         /// <summary>
-        /// Vratí filtrovaný seznam zakázek.
+        /// Vratí filtrovaný seznam zakázek. Pokud není zadán žádný filtr, vrátí všechny zakázky.
         /// </summary>
         public async Task<IEnumerable<TaskListDto>> GetFilteredTasksAsync(
             WorkType? workType,
@@ -32,6 +32,8 @@ namespace AvilokTaskAssignment.Api.Managers
 
             return _mapper.Map<IEnumerable<TaskListDto>>(tasks);
         }
+
+
         #endregion
 
         #region POST

@@ -15,8 +15,9 @@ namespace AvilokTaskAssignment.Api.AutoMapper
                 .ForMember(dest => dest.CreatedByName,
                     opt => opt.MapFrom(src => src.CreatedBy.UserName))
                 .ForMember(dest => dest.AssignedUserName,
-                    opt => opt.MapFrom(src => 
-                        src.Status != Data.Models.TaskStatus.Closed && src.Deadline < DateTime.UtcNow));
+                    opt => opt.MapFrom(src => src.AssignedUser != null
+                        ? src.AssignedUser.UserName
+                        : null));
         }
     }
 }

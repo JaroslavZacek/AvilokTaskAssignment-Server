@@ -8,7 +8,7 @@ namespace AvilokTaskAssignment.Api.Seed
         public static async Task SeedAsync(UserManager<ApplicationUser> userManager, RoleManager<ApplicationRole> roleManager)
         {
             await SeedRolesAsync(roleManager);
-            await SeedUsersAsync(userManager);
+            await SeedAdminAsync(userManager);
         }
 
         private static async Task SeedRolesAsync(RoleManager<ApplicationRole> roleManager)
