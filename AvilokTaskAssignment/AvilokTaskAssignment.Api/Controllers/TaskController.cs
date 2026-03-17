@@ -61,6 +61,13 @@ namespace AvilokTaskAssignment.Api.Controllers
 
         #region Put
 
+        
+
+
+        #endregion
+
+        #region Patch
+
         /// <summary>
         /// Přiřadí zakázku uživateli a změní její stav na "InProgress".
         /// </summary>
@@ -73,6 +80,22 @@ namespace AvilokTaskAssignment.Api.Controllers
 
             return Ok();
         }
+
+
+        /// <summary>
+        /// Změní stav úkolu. Například z "InProgress" na "Completed".
+        /// </summary>
+        [HttpPatch("{taskId}/status")]
+        public async Task<IActionResult> ChanceStatus(Guid taskId, [FromBody] UpdateTaskStatusDto newStatus)
+        {
+            await _taskManager.UpdateStatusAsync(taskId, newStatus.Status);
+
+            return Ok();
+        }
+
+        #endregion
+
+        #region Delete
 
         #endregion
     }

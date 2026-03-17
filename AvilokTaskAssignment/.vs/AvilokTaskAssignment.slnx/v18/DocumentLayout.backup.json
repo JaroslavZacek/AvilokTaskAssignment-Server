@@ -7,6 +7,10 @@
       "RelativeMoniker": "D:0:0:{8E88A849-C2ED-0BD5-1124-4616082E5BAB}|AvilokTaskAssignment.Api\\AvilokTaskAssignment.Api.csproj|solutionrelative:aviloktaskassignment.api\\controllers\\taskcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{6D44ED15-4736-967C-0D42-576AC1E52F5A}|AvilokTaskAssignment.Data\\AvilokTaskAssignment.Data.csproj|c:\\users\\jaros\\documents\\github\\aviloktaskassignment-server\\aviloktaskassignment\\aviloktaskassignment.data\\models\\taskstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6D44ED15-4736-967C-0D42-576AC1E52F5A}|AvilokTaskAssignment.Data\\AvilokTaskAssignment.Data.csproj|solutionrelative:aviloktaskassignment.data\\models\\taskstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{8E88A849-C2ED-0BD5-1124-4616082E5BAB}|AvilokTaskAssignment.Api\\AvilokTaskAssignment.Api.csproj|c:\\users\\jaros\\documents\\github\\aviloktaskassignment-server\\aviloktaskassignment\\aviloktaskassignment.api\\managers\\taskmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8E88A849-C2ED-0BD5-1124-4616082E5BAB}|AvilokTaskAssignment.Api\\AvilokTaskAssignment.Api.csproj|solutionrelative:aviloktaskassignment.api\\managers\\taskmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -18,8 +22,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TaskStatus.cs",
+              "DocumentMoniker": "C:\\Users\\jaros\\Documents\\GitHub\\AvilokTaskAssignment-Server\\AvilokTaskAssignment\\AvilokTaskAssignment.Data\\Models\\TaskStatus.cs",
+              "RelativeDocumentMoniker": "AvilokTaskAssignment.Data\\Models\\TaskStatus.cs",
+              "ToolTip": "C:\\Users\\jaros\\Documents\\GitHub\\AvilokTaskAssignment-Server\\AvilokTaskAssignment\\AvilokTaskAssignment.Data\\Models\\TaskStatus.cs",
+              "RelativeToolTip": "AvilokTaskAssignment.Data\\Models\\TaskStatus.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-17T17:21:26.482Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -28,20 +45,20 @@
               "RelativeDocumentMoniker": "AvilokTaskAssignment.Api\\Controllers\\TaskController.cs",
               "ToolTip": "C:\\Users\\jaros\\Documents\\GitHub\\AvilokTaskAssignment-Server\\AvilokTaskAssignment\\AvilokTaskAssignment.Api\\Controllers\\TaskController.cs",
               "RelativeToolTip": "AvilokTaskAssignment.Api\\Controllers\\TaskController.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAgwEsAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACQAAAAAAAAAAAAowE0AAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-16T21:40:09.628Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "TaskManager.cs",
               "DocumentMoniker": "C:\\Users\\jaros\\Documents\\GitHub\\AvilokTaskAssignment-Server\\AvilokTaskAssignment\\AvilokTaskAssignment.Api\\Managers\\TaskManager.cs",
               "RelativeDocumentMoniker": "AvilokTaskAssignment.Api\\Managers\\TaskManager.cs",
               "ToolTip": "C:\\Users\\jaros\\Documents\\GitHub\\AvilokTaskAssignment-Server\\AvilokTaskAssignment\\AvilokTaskAssignment.Api\\Managers\\TaskManager.cs",
               "RelativeToolTip": "AvilokTaskAssignment.Api\\Managers\\TaskManager.cs",
-              "ViewState": "AgIAAEIAAAAAAAAAAAAwwEIAAABIAAAAAAAAAA==",
+              "ViewState": "AgIAACgAAAAAAAAAAAAgwFQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-16T21:39:40.254Z",
               "EditorCaption": ""

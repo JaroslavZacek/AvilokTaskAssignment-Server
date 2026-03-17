@@ -3,6 +3,8 @@ using AvilokTaskAssignment.Data.Interfaces;
 using AvilokTaskAssignment.Data.Models;
 using AvilokTaskAssignment.Api.DTO;
 
+using TaskStatus = AvilokTaskAssignment.Data.Models.TaskStatus;
+
 namespace AvilokTaskAssignment.Api.Managers
 {
     public class TaskManager
@@ -25,7 +27,7 @@ namespace AvilokTaskAssignment.Api.Managers
             WorkType? workType,
             Guid? createdById,
             Guid? assignedUserId,
-            AvilokTaskAssignment.Data.Models.TaskStatus? status)
+            TaskStatus? status)
 
         {
             var tasks = await _taskRepository.GetFilteredAsync(workType, createdById, assignedUserId, status);
@@ -75,14 +77,14 @@ namespace AvilokTaskAssignment.Api.Managers
                 throw new Exception("Zakázka nebyla nalezena.");
 
             task.AssignedUserId = userID;
-            task.Status = Data.Models.TaskStatus.InProgress;
+            task.Status = TaskStatus.InProgress;
 
             _taskRepository.Update(task);
             await _taskRepository.SaveChangesAsync();
         }
 
 
-        public async Task UpdateStatusAsync(Guid taskId, Data.Models.TaskStatus newStatus)
+        public async Task UpdateStatusAsync(Guid taskId, TaskStatus newStatus)
         {
             var task = await _taskRepository.GetByIdAsync(taskId);
 

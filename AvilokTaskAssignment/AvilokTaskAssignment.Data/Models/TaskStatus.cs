@@ -8,8 +8,8 @@ namespace AvilokTaskAssignment.Data.Models
     {
         NotStarted = 0,
         InProgress = 1,
-        Finished = 2,
-        NeedRevision = 3,
+        NeedRevision = 2,
+        Finished = 3,
         Closed = 4
     }
 }
