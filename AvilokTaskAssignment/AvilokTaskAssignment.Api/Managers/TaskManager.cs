@@ -65,6 +65,12 @@ namespace AvilokTaskAssignment.Api.Managers
 
         #region PUT
 
+        
+
+        #endregion
+
+        #region Patch
+
         /// <summary>
         /// Přiřadí zakázku uživateli a změní její stav na "InProgress".
         /// </summary>
@@ -84,6 +90,9 @@ namespace AvilokTaskAssignment.Api.Managers
         }
 
 
+        /// <summary>
+        /// Upraví stav zakázky. Například z "InProgress" na "Finished".
+        /// </summary>
         public async Task UpdateStatusAsync(Guid taskId, TaskStatus newStatus)
         {
             var task = await _taskRepository.GetByIdAsync(taskId);
@@ -97,6 +106,21 @@ namespace AvilokTaskAssignment.Api.Managers
             await _taskRepository.SaveChangesAsync();
         }
 
+        #endregion
+
+        #region Delete
+        public async Task<bool> DeleteTaskAsync(Guid taskId)
+        {
+            var task = await _taskRepository.GetByIdAsync(taskId);
+
+            if (task == null)
+                return false;
+
+            _taskRepository.Remove(task);
+            await _taskRepository.SaveChangesAsync();
+
+            return true;
+        }
         #endregion
     }
 }

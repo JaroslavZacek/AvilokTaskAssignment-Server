@@ -46,6 +46,7 @@ namespace AvilokTaskAssignment.Api.Controllers
         /// Vytvoří nový úkol.
         /// </summary>
         [HttpPost]
+        [Authorize (Roles = "Admin,Leader Developer,Leader Graphic,Leader Story")]
         public async Task<IActionResult> CreateTask(CreateTaskDto dto)
         {
             var userId = Guid.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)!);
@@ -84,6 +85,7 @@ namespace AvilokTaskAssignment.Api.Controllers
 
         /// <summary>
         /// Změní stav úkolu. Například z "InProgress" na "Completed".
+        /// Prozatím pro všechny. Časem by bylo možné přidat oprávnění, aby stav mohl měnit pouze uživatel, kterému je úkol přiřazen,leader nebo administrátor.
         /// </summary>
         [HttpPatch("{taskId}/status")]
         public async Task<IActionResult> ChanceStatus(Guid taskId, [FromBody] UpdateTaskStatusDto newStatus)
@@ -97,6 +99,23 @@ namespace AvilokTaskAssignment.Api.Controllers
 
         #region Delete
 
+        /// <summary>
+        /// Metoda pro smazání úkolu. Smaže úkol z databáze. Používá se pro odstranění neaktuálních nebo chybně vytvořených úkolů.
+        /// Prozatím pro všechny. Časem by bylo možné přidat oprávnění, aby úkol mohl smazat pouze jeho tvůrce nebo administrátor.
+        /// </summary>
+        [HttpDelete("{taskId}")]
+        public async Task<IActionResult> DeleteTask(Guid taskId)
+        {
+            var deleted = await _taskManager.DeleteTaskAsync(taskId);
+
+            if (!deleted)
+                return NotFound();
+
+            return NoContent();
+        }
+
+
+        // Sem bude časem přidána metoda pro odhlášení pracovníka z úkolu, která změní stav úkolu zpět na "New" a odstraní přiřazení uživatele.
         #endregion
     }
 }
