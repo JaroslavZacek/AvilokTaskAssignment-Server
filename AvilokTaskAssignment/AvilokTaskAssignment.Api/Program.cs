@@ -55,6 +55,7 @@ builder.Services.ConfigureApplicationCookie(options =>
 builder.Services.AddScoped<ITaskRepository, TaskRepository>();
 builder.Services.AddScoped<AuthManager>();
 builder.Services.AddScoped<TaskManager>();
+builder.Services.AddScoped<UserManagerService>();
 
 #endregion
 
