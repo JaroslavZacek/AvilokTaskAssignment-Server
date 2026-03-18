@@ -75,12 +75,16 @@ namespace AvilokTaskAssignment.Api.Managers
         /// Přiřadí zakázku uživateli a změní její stav na "InProgress".
         /// </summary>
 
-        public async Task AssignTaskAsync(Guid taskId, Guid userID)
+        public async Task AssignTaskAsync(Guid taskId, Guid userID, List<string> role)
         {
             var task = await _taskRepository.GetByIdAsync(taskId);
+            var user = await _taskRepository.GetByIdAsync(userID);
 
             if (task == null)
                 throw new Exception("Zakázka nebyla nalezena.");
+
+            if (!role.Contains(task.WorkType.ToString()) || !role.Contains("Leader " + task.WorkType.ToString()))
+                throw new Exception("Uživatel nemá oprávnění pro tento typ zakázky.");
 
             task.AssignedUserId = userID;
             task.Status = TaskStatus.InProgress;

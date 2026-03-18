@@ -77,7 +77,11 @@ namespace AvilokTaskAssignment.Api.Controllers
         {
             var userId = Guid.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)!);
 
-            await _taskManager.AssignTaskAsync(taskId, userId);
+            var role = User.FindAll(ClaimTypes.Role)
+                            .Select(r => r.Value)
+                            .ToList();
+
+            await _taskManager.AssignTaskAsync(taskId, userId, role);
 
             return Ok();
         }
