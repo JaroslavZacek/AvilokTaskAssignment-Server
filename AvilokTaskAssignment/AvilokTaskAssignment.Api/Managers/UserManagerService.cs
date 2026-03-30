@@ -12,6 +12,10 @@ namespace AvilokTaskAssignment.Api.Managers
             _userManager = userManager;
         }
 
+        /// <summary>
+        /// Nastaví roli pro uživatele. Pokud uživatel již má tuto roli, vyhodí výjimku.
+        /// </summary>
+
         public async Task AssignRoleAsync(Guid userId, string roleName)
         {
             var user = await _userManager.FindByIdAsync(userId.ToString());

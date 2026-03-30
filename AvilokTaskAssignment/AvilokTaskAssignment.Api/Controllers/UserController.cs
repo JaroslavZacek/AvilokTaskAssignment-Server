@@ -8,7 +8,7 @@ namespace AvilokTaskAssignment.Api.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    [Authorize(Roles ="Admin,Leader Developer,Leader Graphic,Leader Story")]
+    [Authorize(Roles ="Admin"/*,Leader Developer,Leader Graphic,Leader Story"*/)]
     public class UserController : ControllerBase
     {
         private readonly UserManagerService _userManagerService;
@@ -23,6 +23,9 @@ namespace AvilokTaskAssignment.Api.Controllers
 
         #region Post
 
+        /// <summary>
+        /// Crud operace pro přiřazení role uživateli.
+        /// </summary>
         [HttpPost("assign-role")]
         public async Task<IActionResult> AssignRole([FromBody] AssignRoleDto dto)
         {
