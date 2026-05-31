@@ -1,6 +1,7 @@
 using AutoMapper;
 using AvilokTaskAssignment.Api.AutoMapper;
 using AvilokTaskAssignment.Api.Managers;
+using AvilokTaskAssignment.Api.Interfaces;
 using AvilokTaskAssignment.Data;
 using AvilokTaskAssignment.Data.Interfaces;
 using AvilokTaskAssignment.Data.Models;
@@ -53,9 +54,9 @@ builder.Services.ConfigureApplicationCookie(options =>
 #region DI
 
 builder.Services.AddScoped<ITaskRepository, TaskRepository>();
-builder.Services.AddScoped<AuthManager>();
-builder.Services.AddScoped<TaskManager>();
-builder.Services.AddScoped<UserManagerService>();
+builder.Services.AddScoped<IAuthManager, AuthManager>();
+builder.Services.AddScoped<ITaskManager, TaskManager>();
+builder.Services.AddScoped<IUserManagerService, UserManagerService>();
 
 #endregion
 

@@ -1,5 +1,7 @@
 ﻿using AvilokTaskAssignment.Api.DTO;
 using AvilokTaskAssignment.Api.Managers;
+using AvilokTaskAssignment.Api.Interfaces;
+
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -11,9 +13,9 @@ namespace AvilokTaskAssignment.Api.Controllers
     [Authorize(Roles ="Admin"/*,Leader Developer,Leader Graphic,Leader Story"*/)]
     public class UserController : ControllerBase
     {
-        private readonly UserManagerService _userManagerService;
+        private readonly IUserManagerService _userManagerService;
 
-        public UserController(UserManagerService userManagerService)
+        public UserController(IUserManagerService userManagerService)
         {
             _userManagerService = userManagerService;
         }

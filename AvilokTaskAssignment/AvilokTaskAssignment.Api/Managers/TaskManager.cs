@@ -2,12 +2,13 @@
 using AvilokTaskAssignment.Data.Interfaces;
 using AvilokTaskAssignment.Data.Models;
 using AvilokTaskAssignment.Api.DTO;
+using AvilokTaskAssignment.Api.Interfaces;
 
 using TaskStatus = AvilokTaskAssignment.Data.Models.TaskStatus;
 
 namespace AvilokTaskAssignment.Api.Managers
 {
-    public class TaskManager
+    public class TaskManager : ITaskManager
     {
         private readonly ITaskRepository _taskRepository;
         private readonly IMapper _mapper;

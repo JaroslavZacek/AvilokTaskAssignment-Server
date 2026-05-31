@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using AvilokTaskAssignment.Api.Managers;
 using AvilokTaskAssignment.Api.DTO;
+using AvilokTaskAssignment.Api.Interfaces;
 
 namespace AvilokTaskAssignment.Api.Controllers
 {
@@ -8,9 +8,9 @@ namespace AvilokTaskAssignment.Api.Controllers
     [Route("api/auth")]
     public class AuthController : ControllerBase
     {
-        private readonly AuthManager _authManager;
+        private readonly IAuthManager _authManager;
 
-        public AuthController(AuthManager authManager)
+        public AuthController(IAuthManager authManager)
         {
             _authManager = authManager;
         }

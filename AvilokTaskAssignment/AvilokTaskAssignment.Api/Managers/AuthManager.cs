@@ -1,10 +1,11 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using AvilokTaskAssignment.Data.Models;
 using AvilokTaskAssignment.Api.DTO;
+using AvilokTaskAssignment.Api.Interfaces;
 
 namespace AvilokTaskAssignment.Api.Managers
 {
-    public class AuthManager
+    public class AuthManager : IAuthManager
     {
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;

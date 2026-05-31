@@ -1,9 +1,11 @@
 ﻿using AvilokTaskAssignment.Data.Models;
 using Microsoft.AspNetCore.Identity;
 
+using AvilokTaskAssignment.Api.Interfaces;
+
 namespace AvilokTaskAssignment.Api.Managers
 {
-    public class UserManagerService
+    public class UserManagerService : IUserManagerService
     {
         private readonly UserManager<ApplicationUser> _userManager;
 

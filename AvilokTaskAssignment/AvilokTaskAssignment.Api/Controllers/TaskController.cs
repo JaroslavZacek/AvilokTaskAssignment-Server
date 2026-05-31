@@ -1,10 +1,14 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+
 using AvilokTaskAssignment.Api.Managers;
 using AvilokTaskAssignment.Api.DTO;
 using AvilokTaskAssignment.Data.Models;
+using AvilokTaskAssignment.Api.Interfaces;
+
 using TaskStatus = AvilokTaskAssignment.Data.Models.TaskStatus;
+
 using System.Security.Claims;
 
 namespace AvilokTaskAssignment.Api.Controllers
@@ -14,9 +18,9 @@ namespace AvilokTaskAssignment.Api.Controllers
     [Authorize]
     public class TaskController : ControllerBase
     {
-        private readonly TaskManager _taskManager;
+        private readonly ITaskManager _taskManager;
 
-        public TaskController(TaskManager taskManager)
+        public TaskController(ITaskManager taskManager)
         {
             _taskManager = taskManager;
         }
