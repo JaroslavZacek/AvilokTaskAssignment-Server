@@ -1,5 +1,7 @@
 ﻿using AvilokTaskAssignment.Data.Models;
 
+using TaskStatus = AvilokTaskAssignment.Data.Models.TaskStatus;
+
 namespace AvilokTaskAssignment.Api.DTO
 {
     public class TaskListDto
@@ -22,7 +24,7 @@ namespace AvilokTaskAssignment.Api.DTO
         /// <summary>
         /// Aktuální stav zakázky.
         /// </summary>
-        public Data.Models.TaskStatus Status { get; set; }
+        public TaskStatus Status { get; set; }
 
         /// <summary>
         /// Datum, do kterého musí být zakázka dokončena.

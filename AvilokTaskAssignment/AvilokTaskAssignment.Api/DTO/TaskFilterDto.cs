@@ -1,5 +1,7 @@
 ﻿using AvilokTaskAssignment.Data.Models;
 
+using TaskStatus = AvilokTaskAssignment.Data.Models.TaskStatus;
+
 namespace AvilokTaskAssignment.Api.DTO
 {
     public class TaskFilterDto
@@ -7,6 +9,6 @@ namespace AvilokTaskAssignment.Api.DTO
         public WorkType? WorkType { get; set; }
         public Guid? CreatedById { get; set; }
         public Guid? AssignedUserId { get; set; }
-        public Data.Models.TaskStatus? Status { get; set; }
+        public TaskStatus? Status { get; set; }
     }
 }
