@@ -40,5 +40,13 @@ namespace AvilokTaskAssignment.Data.Repositories
             return await query.ToListAsync();
         }
 
+        public async Task<TaskItem?> GetDetailAsync(Guid taskId)
+        {
+            return await _context.TaskItems
+                .Include(t => t.CreatedBy)
+                .Include(t => t.AssignedUser)
+                .FirstOrDefaultAsync(t => t.Id == taskId);
+        }
+
     }
 }

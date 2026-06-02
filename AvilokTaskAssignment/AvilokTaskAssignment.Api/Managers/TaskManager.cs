@@ -36,6 +36,19 @@ namespace AvilokTaskAssignment.Api.Managers
             return _mapper.Map<IEnumerable<TaskListDto>>(tasks);
         }
 
+        /// <summary>
+        /// Vratí detailní informace o zakázce podle jejího ID.
+        /// </summary>
+        public async Task<TaskDetailDto> GetTaskDetailAsync(Guid taskId)
+        {
+            var task = await _taskRepository.GetDetailAsync(taskId);
+            
+            if (task == null)
+                throw new Exception("Zakázka nebyla nalezena.");
+
+            return _mapper.Map<TaskDetailDto>(task);
+        }
+
 
         #endregion
 

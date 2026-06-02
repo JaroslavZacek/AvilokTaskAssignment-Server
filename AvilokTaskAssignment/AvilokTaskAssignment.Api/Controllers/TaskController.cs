@@ -43,6 +43,20 @@ namespace AvilokTaskAssignment.Api.Controllers
             return Ok(tasks);
         }
 
+        /// <summary>
+        /// Vypíše detail úkolu podle jeho ID. Detail obsahuje všechny informace o úkolu, včetně jména a ID uživatele, kterému je úkol přiřazen, a jména a ID uživatele, který úkol vytvořil.
+        /// </summary>
+        [HttpGet("{taskId}")]
+        public async Task<ActionResult<TaskDetailDto>> GetTaskDetail(Guid taskId)
+        {
+            var task = await _taskManager.GetTaskDetailAsync(taskId);
+            
+            if (task == null)
+                return NotFound();
+
+            return Ok(task);
+        }
+
         #endregion
 
         #region Post
