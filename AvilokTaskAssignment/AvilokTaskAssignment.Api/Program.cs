@@ -69,6 +69,21 @@ builder.Services.AddAutoMapper(cfg =>
 
 #endregion
 
+#region CORS
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("FrontednPolicy",policy =>
+    {
+        policy.WithOrigins(
+                "http://localhost:5173",
+                "https://localhost:5173")
+            .AllowAnyHeader()
+            .AllowAnyMethod()
+            .AllowCredentials();
+    });
+});
+#endregion
+
 #region Controllers
 
 builder.Services.AddControllers();
@@ -84,6 +99,8 @@ builder.Services.AddSwaggerGen();
 
 
 var app = builder.Build();
+
+app.UseCors("FrontednPolicy");
 
 #region Set admin
 

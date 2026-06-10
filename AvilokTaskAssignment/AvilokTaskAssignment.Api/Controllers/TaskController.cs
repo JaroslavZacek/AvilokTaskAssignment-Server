@@ -15,7 +15,7 @@ namespace AvilokTaskAssignment.Api.Controllers
 {
     [ApiController]
     [Route("api/tasks")]
-    [Authorize]
+    //[Authorize]
     public class TaskController : ControllerBase
     {
         private readonly ITaskManager _taskManager;
@@ -64,7 +64,7 @@ namespace AvilokTaskAssignment.Api.Controllers
         /// Vytvoří nový úkol.
         /// </summary>
         [HttpPost]
-        [Authorize (Roles = "Admin,Leader Developer,Leader Graphic,Leader Story")]
+        //[Authorize (Roles = "Admin,Leader Developer,Leader Graphic,Leader Story")]
         public async Task<IActionResult> CreateTask(CreateTaskDto dto)
         {
             var userId = Guid.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)!);
