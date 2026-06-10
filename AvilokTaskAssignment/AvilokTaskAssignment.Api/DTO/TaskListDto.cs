@@ -29,7 +29,7 @@ namespace AvilokTaskAssignment.Api.DTO
         /// <summary>
         /// Datum, do kterého musí být zakázka dokončena.
         /// </summary>
-        public DateTime DeadLine{ get; set; }
+        public DateTime Deadline{ get; set; }
 
         /// <summary>
         /// Jméno uživatele, který zakázku vytvořil.

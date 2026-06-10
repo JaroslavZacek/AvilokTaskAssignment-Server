@@ -15,7 +15,7 @@ namespace AvilokTaskAssignment.Api.Controllers
 {
     [ApiController]
     [Route("api/tasks")]
-    //[Authorize]
+    [Authorize]
     public class TaskController : ControllerBase
     {
         private readonly ITaskManager _taskManager;

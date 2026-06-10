@@ -15,18 +15,18 @@ namespace AvilokTaskAssignment.Api.AutoMapper
 
             CreateMap<TaskItem, TaskListDto>()
                 .ForMember(dest => dest.CreatedByName,
-                    opt => opt.MapFrom(src => src.CreatedBy.UserName))
+                    opt => opt.MapFrom(src => src.CreatedBy.FullName))
                 .ForMember(dest => dest.AssignedUserName,
                     opt => opt.MapFrom(src => src.AssignedUser != null
-                        ? src.AssignedUser.UserName
+                        ? src.AssignedUser.FullName
                         : null));
 
             CreateMap<TaskItem, TaskDetailDto>()
                 .ForMember(dest => dest.CreatedByName,
-                    opt => opt.MapFrom(src => src.CreatedBy.UserName))
+                    opt => opt.MapFrom(src => src.CreatedBy.FullName))
                 .ForMember(dest => dest.AssignedUserName,
                     opt => opt.MapFrom(src => src.AssignedUser != null
-                        ? src.AssignedUser.UserName
+                        ? src.AssignedUser.FullName
                         : null))
                 .ForMember(dest => dest.IsOverdue,
                     opt => opt.MapFrom(src => src.Status != TaskStatus.Finished && src.Deadline < DateTime.UtcNow));

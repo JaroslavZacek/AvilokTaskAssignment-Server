@@ -3,15 +3,15 @@
   "WorkspaceRootPath": "C:\\Users\\jaros\\Documents\\GitHub\\AvilokTaskAssignment-Server\\AvilokTaskAssignment\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{8E88A849-C2ED-0BD5-1124-4616082E5BAB}|AvilokTaskAssignment.Api\\AvilokTaskAssignment.Api.csproj|c:\\users\\jaros\\documents\\github\\aviloktaskassignment-server\\aviloktaskassignment\\aviloktaskassignment.api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8E88A849-C2ED-0BD5-1124-4616082E5BAB}|AvilokTaskAssignment.Api\\AvilokTaskAssignment.Api.csproj|solutionrelative:aviloktaskassignment.api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{8E88A849-C2ED-0BD5-1124-4616082E5BAB}|AvilokTaskAssignment.Api\\AvilokTaskAssignment.Api.csproj|c:\\users\\jaros\\documents\\github\\aviloktaskassignment-server\\aviloktaskassignment\\aviloktaskassignment.api\\dto\\currentuserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8E88A849-C2ED-0BD5-1124-4616082E5BAB}|AvilokTaskAssignment.Api\\AvilokTaskAssignment.Api.csproj|solutionrelative:aviloktaskassignment.api\\dto\\currentuserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/AvilokTaskDatabase/True/SqlTable/dbo.AspNetUsers.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8E88A849-C2ED-0BD5-1124-4616082E5BAB}|AvilokTaskAssignment.Api\\AvilokTaskAssignment.Api.csproj|c:\\users\\jaros\\documents\\github\\aviloktaskassignment-server\\aviloktaskassignment\\aviloktaskassignment.api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8E88A849-C2ED-0BD5-1124-4616082E5BAB}|AvilokTaskAssignment.Api\\AvilokTaskAssignment.Api.csproj|solutionrelative:aviloktaskassignment.api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8E88A849-C2ED-0BD5-1124-4616082E5BAB}|AvilokTaskAssignment.Api\\AvilokTaskAssignment.Api.csproj|c:\\users\\jaros\\documents\\github\\aviloktaskassignment-server\\aviloktaskassignment\\aviloktaskassignment.api\\controllers\\taskcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -29,40 +29,38 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "CurrentUserDto.cs",
               "DocumentMoniker": "C:\\Users\\jaros\\Documents\\GitHub\\AvilokTaskAssignment-Server\\AvilokTaskAssignment\\AvilokTaskAssignment.Api\\DTO\\CurrentUserDto.cs",
               "RelativeDocumentMoniker": "AvilokTaskAssignment.Api\\DTO\\CurrentUserDto.cs",
               "ToolTip": "C:\\Users\\jaros\\Documents\\GitHub\\AvilokTaskAssignment-Server\\AvilokTaskAssignment\\AvilokTaskAssignment.Api\\DTO\\CurrentUserDto.cs",
               "RelativeToolTip": "AvilokTaskAssignment.Api\\DTO\\CurrentUserDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAA1AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-10T12:07:33.106Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "dbo.AspNetUsers [Data]",
-              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/AvilokTaskDatabase/True/SqlTable/dbo.AspNetUsers.sql",
-              "ToolTip": "dbo.AspNetUsers [Data]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2026-06-10T12:05:45.329Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-10T22:18:17.408Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "dbo.AspNetUsers.sql",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/AvilokTaskDatabase/True/SqlTable/dbo.AspNetUsers.sql",
+              "ToolTip": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/AvilokTaskDatabase/True/SqlTable/dbo.AspNetUsers.sql",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2026-06-10T22:16:59.361Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "AuthController.cs",
               "DocumentMoniker": "C:\\Users\\jaros\\Documents\\GitHub\\AvilokTaskAssignment-Server\\AvilokTaskAssignment\\AvilokTaskAssignment.Api\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "AvilokTaskAssignment.Api\\Controllers\\AuthController.cs",
               "ToolTip": "C:\\Users\\jaros\\Documents\\GitHub\\AvilokTaskAssignment-Server\\AvilokTaskAssignment\\AvilokTaskAssignment.Api\\Controllers\\AuthController.cs",
               "RelativeToolTip": "AvilokTaskAssignment.Api\\Controllers\\AuthController.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAowAIAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAowD0AAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-06-10T11:58:20.579Z",
               "EditorCaption": ""
@@ -75,7 +73,7 @@
               "RelativeDocumentMoniker": "AvilokTaskAssignment.Api\\Controllers\\TaskController.cs",
               "ToolTip": "C:\\Users\\jaros\\Documents\\GitHub\\AvilokTaskAssignment-Server\\AvilokTaskAssignment\\AvilokTaskAssignment.Api\\Controllers\\TaskController.cs",
               "RelativeToolTip": "AvilokTaskAssignment.Api\\Controllers\\TaskController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADIAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAABEAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-06-06T07:29:24.793Z"
             },
@@ -87,7 +85,7 @@
               "RelativeDocumentMoniker": "AvilokTaskAssignment.Api\\Program.cs",
               "ToolTip": "C:\\Users\\jaros\\Documents\\GitHub\\AvilokTaskAssignment-Server\\AvilokTaskAssignment\\AvilokTaskAssignment.Api\\Program.cs",
               "RelativeToolTip": "AvilokTaskAssignment.Api\\Program.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAIwEgAAAAjAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAACcAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-31T16:37:18.127Z"
             }
