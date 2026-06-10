@@ -1,6 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
+
 using AvilokTaskAssignment.Api.DTO;
 using AvilokTaskAssignment.Api.Interfaces;
+
+using System.Security.Claims;
+
 
 namespace AvilokTaskAssignment.Api.Controllers
 {
@@ -34,6 +39,18 @@ namespace AvilokTaskAssignment.Api.Controllers
         {
             await _authManager.LogoutAsync();
             return Ok("Odhlášení úspěšné.");
+        }
+
+        [HttpGet("me")]
+        [Authorize]
+        public IActionResult Me()
+        {
+            return Ok(new
+            {
+                UserId = User.FindFirstValue(ClaimTypes.NameIdentifier),
+                Email = User.Identity?.Name,
+                Roles = User.FindAll(ClaimTypes.Role).Select(r => r.Value).ToList()
+            });
         }
     }
 }
