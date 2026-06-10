@@ -11,7 +11,7 @@ namespace AvilokTaskAssignment.Api.AutoMapper
     {
         public AutoMappingProfile() 
         {
-            CreateMap<CreateTaskDto, CreateTaskDto>();
+            //CreateMap<CreateTaskDto, CreateTaskDto>();
 
             CreateMap<TaskItem, TaskListDto>()
                 .ForMember(dest => dest.CreatedByName,

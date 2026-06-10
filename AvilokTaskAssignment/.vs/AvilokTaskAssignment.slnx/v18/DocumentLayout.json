@@ -43,7 +43,7 @@
               "RelativeDocumentMoniker": "AvilokTaskAssignment.Api\\AutoMapper\\AutoMappingProfile.cs",
               "ToolTip": "C:\\Users\\jaros\\Documents\\GitHub\\AvilokTaskAssignment-Server\\AvilokTaskAssignment\\AvilokTaskAssignment.Api\\AutoMapper\\AutoMappingProfile.cs",
               "RelativeToolTip": "AvilokTaskAssignment.Api\\AutoMapper\\AutoMappingProfile.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAzAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-06-10T22:38:54.08Z",
               "EditorCaption": ""
@@ -58,8 +58,7 @@
               "RelativeToolTip": "AvilokTaskAssignment.Api\\DTO\\CurrentUserDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-10T22:18:17.408Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-10T22:18:17.408Z"
             },
             {
               "$type": "Document",
@@ -80,8 +79,7 @@
               "RelativeToolTip": "AvilokTaskAssignment.Api\\Controllers\\AuthController.cs",
               "ViewState": "AgIAAB4AAAAAAAAAAAAowD0AAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-10T11:58:20.579Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-10T11:58:20.579Z"
             },
             {
               "$type": "Document",
