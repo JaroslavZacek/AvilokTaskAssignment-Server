@@ -45,9 +45,9 @@ namespace AvilokTaskAssignment.Api.Controllers
         [Authorize]
         public IActionResult Me()
         {
-            return Ok(new
+            return Ok(new CurrentUserDto
             {
-                UserId = User.FindFirstValue(ClaimTypes.NameIdentifier),
+                UserId = User.FindFirstValue(ClaimTypes.NameIdentifier) ?? string.Empty,
                 Email = User.Identity?.Name,
                 Roles = User.FindAll(ClaimTypes.Role).Select(r => r.Value).ToList()
             });
