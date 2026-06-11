@@ -10,7 +10,7 @@ namespace AvilokTaskAssignment.Api.Controllers
 {
     [ApiController]
     [Route("api/users")]
-    [Authorize/*(Roles ="Admin",Leader Developer,Leader Graphic,Leader Story")*/]
+    [Authorize(Roles ="Admin, Leader Developer, Leader Graphic, Leader Story")]
     public class UserController : ControllerBase
     {
         private readonly IUserManagerService _userManagerService;

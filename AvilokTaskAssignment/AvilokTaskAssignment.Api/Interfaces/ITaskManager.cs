@@ -15,7 +15,7 @@ namespace AvilokTaskAssignment.Api.Interfaces
 
         Task<Guid> CreateTaskAsync(CreateTaskDto dto, Guid createdById);
 
-        Task AssignTaskAsync(Guid taskId, Guid userId, List<string> roles);
+        Task AssignTaskAsync(Guid taskId, Guid? userId, List<string> roles);
 
         Task UpdateStatusAsync(Guid taskId, TaskStatus newStatus);
 

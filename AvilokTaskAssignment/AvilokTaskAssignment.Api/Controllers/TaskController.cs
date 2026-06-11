@@ -64,7 +64,7 @@ namespace AvilokTaskAssignment.Api.Controllers
         /// Vytvoří nový úkol.
         /// </summary>
         [HttpPost]
-        //[Authorize (Roles = "Admin,Leader Developer,Leader Graphic,Leader Story")]
+        [Authorize(Roles = "Admin, Leader Developer, Leader Graphic, Leader Story")]
         public async Task<IActionResult> CreateTask(CreateTaskDto dto)
         {
             var userId = Guid.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)!);
@@ -88,20 +88,22 @@ namespace AvilokTaskAssignment.Api.Controllers
         #region Patch
 
         /// <summary>
-        /// Přiřadí zakázku uživateli a změní její stav na "InProgress".
+        /// Přiřadí zakázku uživateli.
         /// </summary>
-        [HttpPost("{taskId}/take")]
-        public async Task<IActionResult> AssignTask(Guid taskId)
+        [HttpPatch("{taskId}/assign")]
+        public async Task<IActionResult> AssignTask(Guid taskId, [FromBody] AssignTaskDto assignTaskDto)
         {
-            var userId = Guid.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)!);
-
             var role = User.FindAll(ClaimTypes.Role)
                             .Select(r => r.Value)
                             .ToList();
 
-            await _taskManager.AssignTaskAsync(taskId, userId, role);
+            await _taskManager.AssignTaskAsync(taskId, assignTaskDto.AssignedUserId, role);
 
-            return Ok();
+            return Ok(new
+            {
+                Massage = "Zakázka byla úspěšně přiřazena uživateli."
+            });
+
         }
 
 
@@ -129,6 +131,7 @@ namespace AvilokTaskAssignment.Api.Controllers
         /// Prozatím pro všechny. Časem by bylo možné přidat oprávnění, aby úkol mohl smazat pouze jeho tvůrce nebo administrátor.
         /// </summary>
         [HttpDelete("{taskId}")]
+        [Authorize(Roles = "Admin, Leader Developer, Leader Graphic, Leader Story")]
         public async Task<IActionResult> DeleteTask(Guid taskId)
         {
             var deleted = await _taskManager.DeleteTaskAsync(taskId);

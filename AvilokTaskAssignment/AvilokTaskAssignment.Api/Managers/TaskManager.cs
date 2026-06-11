@@ -6,16 +6,20 @@ using AvilokTaskAssignment.Api.Interfaces;
 
 using TaskStatus = AvilokTaskAssignment.Data.Models.TaskStatus;
 
+using Microsoft.AspNetCore.Identity;
+
 namespace AvilokTaskAssignment.Api.Managers
 {
     public class TaskManager : ITaskManager
     {
         private readonly ITaskRepository _taskRepository;
+        private readonly UserManager<ApplicationUser> _userManager;
         private readonly IMapper _mapper;
 
-        public TaskManager(ITaskRepository taskRepository, IMapper mapper)
+        public TaskManager(ITaskRepository taskRepository, UserManager<ApplicationUser> userManager, IMapper mapper)
         {
             _taskRepository = taskRepository;
+            _userManager = userManager;
             _mapper = mapper;
         }
 
@@ -89,21 +93,23 @@ namespace AvilokTaskAssignment.Api.Managers
         /// Přiřadí zakázku uživateli a změní její stav na "InProgress".
         /// </summary>
 
-        public async Task AssignTaskAsync(Guid taskId, Guid userID, List<string> role)
+        public async Task AssignTaskAsync(Guid taskId, Guid? userID, List<string> roles)
         {
             var task = await _taskRepository.GetByIdAsync(taskId);
-            var user = await _taskRepository.GetByIdAsync(userID);
 
             if (task == null)
                 throw new Exception("Zakázka nebyla nalezena.");
 
-            if (!role.Contains(task.WorkType.ToString()) || !role.Contains("Leader " + task.WorkType.ToString()))
-                throw new Exception("Uživatel nemá oprávnění pro tento typ zakázky.");
+            if (userID != null)
+            {
+               var roleName = GetRoleName(task.WorkType);
+
+                if (!roles.Contains(roleName) && !roles.Contains($"Leader {roleName}") && !roles.Contains("Admin"))
+                    throw new Exception("Uživatel nemá oprávnění pro tento typ zakázky."); 
+            }
 
             task.AssignedUserId = userID;
-            task.Status = TaskStatus.InProgress;
 
-            _taskRepository.Update(task);
             await _taskRepository.SaveChangesAsync();
         }
 
@@ -138,6 +144,20 @@ namespace AvilokTaskAssignment.Api.Managers
             await _taskRepository.SaveChangesAsync();
 
             return true;
+        }
+        #endregion
+
+        #region Pomocné metody
+
+        private static string GetRoleName(WorkType workType)
+        {
+            return workType switch
+            {
+                WorkType.Developer => "Developer",
+                WorkType.GraphicDesigner => "Graphic",
+                WorkType.Storyteller => "Story",
+                _ => throw new Exception("Neznámý typ práce.")
+            };
         }
         #endregion
     }

@@ -65,6 +65,7 @@ namespace AvilokTaskAssignment.Api.Seed
             }
 
             await userManager.AddToRoleAsync(adminUser, "Admin");
+            await userManager.AddToRoleAsync(adminUser, "Developer");
         }
     }
 }
