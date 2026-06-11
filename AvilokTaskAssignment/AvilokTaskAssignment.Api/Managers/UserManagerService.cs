@@ -1,7 +1,11 @@
 ﻿using AvilokTaskAssignment.Data.Models;
+using AvilokTaskAssignment.Api.Interfaces;
+using AvilokTaskAssignment.Api.DTO;
+
 using Microsoft.AspNetCore.Identity;
 
-using AvilokTaskAssignment.Api.Interfaces;
+using Microsoft.EntityFrameworkCore;
+
 
 namespace AvilokTaskAssignment.Api.Managers
 {
@@ -12,6 +16,29 @@ namespace AvilokTaskAssignment.Api.Managers
         public UserManagerService(UserManager<ApplicationUser> userManager)
         {
             _userManager = userManager;
+        }
+
+        /// <summary>
+        /// Získá seznam všech uživatelů v systému, seřazených podle jména. Každý uživatel je reprezentován jako UserListDto, který obsahuje jeho ID, celé jméno a email.
+        /// </summary>
+        public async Task<IEnumerable<UserListDto>> GetUsersAsync()
+        {
+            var users = await _userManager.Users
+                .OrderBy(u => u.FullName)
+                .ToListAsync();
+
+            return await Task.WhenAll(users.Select(async user =>
+            {
+                var roles = await _userManager.GetRolesAsync(user);
+
+                return new UserListDto
+                {
+                    Id = user.Id,
+                    FullName = user.FullName,
+                    Email = user.Email ?? string.Empty,
+                    Roles = roles.ToList()
+                };
+            })); 
         }
 
         /// <summary>

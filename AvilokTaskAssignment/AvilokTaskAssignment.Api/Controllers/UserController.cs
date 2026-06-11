@@ -9,8 +9,8 @@ using Microsoft.AspNetCore.Mvc;
 namespace AvilokTaskAssignment.Api.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
-    [Authorize(Roles ="Admin"/*,Leader Developer,Leader Graphic,Leader Story"*/)]
+    [Route("api/users")]
+    [Authorize/*(Roles ="Admin",Leader Developer,Leader Graphic,Leader Story")*/]
     public class UserController : ControllerBase
     {
         private readonly IUserManagerService _userManagerService;
@@ -21,6 +21,17 @@ namespace AvilokTaskAssignment.Api.Controllers
         }
 
         #region Get
+
+        /// <summary>
+        /// Crud operace pro získání všech uživatelů.
+        /// </summary>
+        [HttpGet]
+        public async Task<IActionResult> GetUsers()
+        {
+            var users = await _userManagerService.GetUsersAsync();
+            return Ok(users);
+        }
+
         #endregion
 
         #region Post
