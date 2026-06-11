@@ -34,12 +34,12 @@ namespace AvilokTaskAssignment.Api.Controllers
         /// </summary>
         [HttpGet]
         public async Task<ActionResult<IEnumerable<TaskListDto>>> GetTasks([FromQuery] 
-            WorkType? worktype,
+            WorkType? workType,
             Guid? createdById,
             Guid? assignedUserId,
             TaskStatus? status)
         {
-            var tasks = await _taskManager.GetFilteredTasksAsync(worktype, createdById, assignedUserId, status);
+            var tasks = await _taskManager.GetFilteredTasksAsync(workType, createdById, assignedUserId, status);
             return Ok(tasks);
         }
 
