@@ -114,7 +114,10 @@ namespace AvilokTaskAssignment.Api.Controllers
         {
             await _taskManager.UpdateStatusAsync(taskId, newStatus.Status);
 
-            return Ok();
+            return Ok(new
+            {
+                massage = "Status byl úspěšně změněn"
+            });
         }
 
         #endregion
