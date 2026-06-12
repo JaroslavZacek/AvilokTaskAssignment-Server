@@ -45,15 +45,15 @@ namespace AvilokTaskAssignment.Api.Controllers
 
         #endregion
 
-        #region Patch
+        #region Post
 
         /// <summary>
         /// Crud operace pro přiřazení role uživateli.
         /// </summary>
-        [HttpPatch("assign-role")]
-        public async Task<IActionResult> AssignRole([FromBody] AssignRoleDto dto)
+        [HttpPost("{userId}/assign-role")]
+        public async Task<IActionResult> AssignRole(Guid userId, [FromBody] AssignRoleDto dto)
         {
-            await _userManagerService.AssignRoleAsync(dto.UserId, dto.RoleName);
+            await _userManagerService.AssignRoleAsync(userId, dto.RoleName);
 
             return Ok();
         }
