@@ -18,6 +18,26 @@ namespace AvilokTaskAssignment.Api.Managers
             _userManager = userManager;
         }
 
+        #region Get
+
+        public async Task<UserDetailDto> GetDetailUserAsync(Guid userId)
+        {
+            var user = await _userManager.FindByIdAsync(userId.ToString());
+
+            if (user == null)
+                throw new Exception("Uživatel nebyl nalezen.");
+
+            var roles = await _userManager.GetRolesAsync(user);
+
+            return new UserDetailDto
+            {
+                Id = user.Id,
+                FullName = user.FullName,
+                Email = user.Email ?? string.Empty,
+                Roles = roles.ToList()
+            };
+        }
+
         /// <summary>
         /// Získá seznam všech uživatelů v systému, seřazených podle jména. Každý uživatel je reprezentován jako UserListDto, který obsahuje jeho ID, celé jméno a email.
         /// </summary>
@@ -29,12 +49,12 @@ namespace AvilokTaskAssignment.Api.Managers
 
             var result = new List<UserListDto>();
 
-            foreach (var user in users) 
+            foreach (var user in users)
             {
                 var roles = await _userManager.GetRolesAsync(user);
                 result.Add(new UserListDto
                 {
-                    Id= user.Id,
+                    Id = user.Id,
                     FullName = user.FullName,
                     Email = user.Email ?? string.Empty,
                     Roles = roles.ToList()
@@ -43,6 +63,8 @@ namespace AvilokTaskAssignment.Api.Managers
 
             return result;
         }
+        #endregion
+
 
         /// <summary>
         /// Nastaví roli pro uživatele. Pokud uživatel již má tuto roli, vyhodí výjimku.
