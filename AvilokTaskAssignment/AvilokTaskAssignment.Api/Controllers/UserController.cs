@@ -23,6 +23,17 @@ namespace AvilokTaskAssignment.Api.Controllers
         #region Get
 
         /// <summary>
+        /// Crud operace pro získání detailů uživatele podle jeho ID.
+        /// </summary>
+        [HttpGet("{userId}")]
+        public async Task<ActionResult<UserDetailDto>> GetUser(Guid userId)
+        {
+            var user = await _userManagerService.GetDetailUserAsync(userId);
+
+            return Ok(user);
+        }
+
+        /// <summary>
         /// Crud operace pro získání všech uživatelů.
         /// </summary>
         [HttpGet]
