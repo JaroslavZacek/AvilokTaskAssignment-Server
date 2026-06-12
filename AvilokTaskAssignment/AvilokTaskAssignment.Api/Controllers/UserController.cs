@@ -55,7 +55,10 @@ namespace AvilokTaskAssignment.Api.Controllers
         {
             await _userManagerService.AssignRoleAsync(userId, dto.RoleName);
 
-            return Ok();
+            return Ok(new
+            {
+                Message = "Role byla přidělena úspěsně."
+            });
         }
 
         #endregion
