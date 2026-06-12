@@ -27,18 +27,21 @@ namespace AvilokTaskAssignment.Api.Managers
                 .OrderBy(u => u.FullName)
                 .ToListAsync();
 
-            return await Task.WhenAll(users.Select(async user =>
+            var result = new List<UserListDto>();
+
+            foreach (var user in users) 
             {
                 var roles = await _userManager.GetRolesAsync(user);
-
-                return new UserListDto
+                result.Add(new UserListDto
                 {
-                    Id = user.Id,
+                    Id= user.Id,
                     FullName = user.FullName,
                     Email = user.Email ?? string.Empty,
                     Roles = roles.ToList()
-                };
-            })); 
+                });
+            }
+
+            return result;
         }
 
         /// <summary>
