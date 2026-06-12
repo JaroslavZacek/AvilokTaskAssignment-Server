@@ -20,6 +20,9 @@ namespace AvilokTaskAssignment.Api.Managers
 
         #region Get
 
+        /// <summary>
+        /// Získá detailní informace o uživateli podle jeho ID. Pokud uživatel není nalezen, vyhodí výjimku.
+        /// </summary>
         public async Task<UserDetailDto> GetDetailUserAsync(Guid userId)
         {
             var user = await _userManager.FindByIdAsync(userId.ToString());
