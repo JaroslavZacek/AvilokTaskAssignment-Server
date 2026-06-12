@@ -4,6 +4,7 @@ namespace AvilokTaskAssignment.Api.Interfaces
 {
     public interface IUserManagerService
     {
+        Task<UserDetailDto> GetDetailUserAsync(Guid userId);
         Task<IEnumerable<UserListDto>> GetUsersAsync();
         Task AssignRoleAsync(Guid userId, string roleName);
     }
