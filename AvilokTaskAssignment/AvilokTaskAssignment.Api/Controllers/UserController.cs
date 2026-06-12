@@ -67,6 +67,19 @@ namespace AvilokTaskAssignment.Api.Controllers
         #endregion
 
         #region Delete
+        /// <summary>
+        /// Crud operace pro odebrání role uživateli.
+        /// </summary>
+        [HttpDelete("{userId}/remove-role")]
+        public async Task<IActionResult> RemoveRole(Guid userId, [FromBody] RemoveRoleDto dto)
+        {
+            await _userManagerService.RemoveRoleAsync(userId, dto.RoleName);
+
+            return Ok(new
+            {
+                Message = "Role byla odebrána úspěšně."
+            });
+        }
         #endregion
 
 
