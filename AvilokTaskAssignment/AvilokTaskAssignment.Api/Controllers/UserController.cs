@@ -26,7 +26,7 @@ namespace AvilokTaskAssignment.Api.Controllers
         /// Crud operace pro získání detailů uživatele podle jeho ID.
         /// </summary>
         [HttpGet("{userId}")]
-        public async Task<ActionResult<UserDetailDto>> GetUser(Guid userId)
+        public async Task<ActionResult<UserDetailDto>> GetDetailUser(Guid userId)
         {
             var user = await _userManagerService.GetDetailUserAsync(userId);
 
