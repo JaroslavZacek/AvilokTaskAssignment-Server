@@ -97,6 +97,11 @@ namespace AvilokTaskAssignment.Api.Managers
         {
             var task = await _taskRepository.GetByIdAsync(taskId);
 
+            var leaderRole = GetLeaderRoleName(task.WorkType);
+
+            if (!roles.Contains("Admin") && !roles.Contains(leaderRole))
+                throw new Exception("Nemáte oprávnění přiřadit tuto zakázku.");
+
             if (task == null)
                 throw new Exception("Zakázka nebyla nalezena.");
 
@@ -149,6 +154,9 @@ namespace AvilokTaskAssignment.Api.Managers
 
         #region Pomocné metody
 
+        /// <summary>
+        /// Vrátí název role pro daný typ práce.
+        /// </summary>
         private static string GetRoleName(WorkType workType)
         {
             return workType switch
@@ -156,6 +164,20 @@ namespace AvilokTaskAssignment.Api.Managers
                 WorkType.Developer => "Developer",
                 WorkType.GraphicDesigner => "Graphic",
                 WorkType.Storyteller => "Story",
+                _ => throw new Exception("Neznámý typ práce.")
+            };
+        }
+
+        /// <summary>
+        /// Vrátí název role pro vedoucího daného typu práce.
+        /// </summary>
+        private string GetLeaderRoleName(WorkType workType)
+        {
+            return workType switch
+            {
+                WorkType.Developer => "Leader Developer",
+                WorkType.GraphicDesigner => "Leader Graphic",
+                WorkType.Storyteller => "Leader Story",
                 _ => throw new Exception("Neznámý typ práce.")
             };
         }
