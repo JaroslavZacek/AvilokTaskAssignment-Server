@@ -3,6 +3,7 @@ using AvilokTaskAssignment.Data.Interfaces;
 using AvilokTaskAssignment.Data.Models;
 using AvilokTaskAssignment.Api.DTO;
 using AvilokTaskAssignment.Api.Interfaces;
+using AvilokTaskAssignment.Api.Helpers;
 
 using TaskStatus = AvilokTaskAssignment.Data.Models.TaskStatus;
 
@@ -97,7 +98,9 @@ namespace AvilokTaskAssignment.Api.Managers
         {
             var task = await _taskRepository.GetByIdAsync(taskId);
 
-            var leaderRole = GetLeaderRoleName(task.WorkType);
+            //var leaderRole = GetLeaderRoleName(task.WorkType);
+
+            var leaderRole = task.WorkType.GetLeaderRoleName();
 
             if (!roles.Contains("Admin") && !roles.Contains(leaderRole))
                 throw new Exception("Nemáte oprávnění přiřadit tuto zakázku.");
@@ -107,7 +110,7 @@ namespace AvilokTaskAssignment.Api.Managers
 
             if (userID != null)
             {
-               var roleName = GetRoleName(task.WorkType);
+               var roleName = task.WorkType.GetRoleName();
 
                 if (!roles.Contains(roleName) && !roles.Contains($"Leader {roleName}") && !roles.Contains("Admin"))
                     throw new Exception("Uživatel nemá oprávnění pro tento typ zakázky."); 
@@ -152,35 +155,5 @@ namespace AvilokTaskAssignment.Api.Managers
         }
         #endregion
 
-        #region Pomocné metody
-
-        /// <summary>
-        /// Vrátí název role pro daný typ práce.
-        /// </summary>
-        private static string GetRoleName(WorkType workType)
-        {
-            return workType switch
-            {
-                WorkType.Developer => "Developer",
-                WorkType.GraphicDesigner => "Graphic",
-                WorkType.Storyteller => "Story",
-                _ => throw new Exception("Neznámý typ práce.")
-            };
-        }
-
-        /// <summary>
-        /// Vrátí název role pro vedoucího daného typu práce.
-        /// </summary>
-        private string GetLeaderRoleName(WorkType workType)
-        {
-            return workType switch
-            {
-                WorkType.Developer => "Leader Developer",
-                WorkType.GraphicDesigner => "Leader Graphic",
-                WorkType.Storyteller => "Leader Story",
-                _ => throw new Exception("Neznámý typ práce.")
-            };
-        }
-        #endregion
     }
 }
