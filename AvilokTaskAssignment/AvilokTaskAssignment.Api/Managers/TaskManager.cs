@@ -98,19 +98,16 @@ namespace AvilokTaskAssignment.Api.Managers
         {
             var task = await _taskRepository.GetByIdAsync(taskId);
 
-            var leaderRole = task.WorkType.GetLeaderRoleName();
-
-            if (!roles.Contains("Admin") && !roles.Contains(leaderRole))
-                throw new Exception("Nemáte oprávnění přiřadit tuto zakázku.");
-
             if (task == null)
                 throw new Exception("Zakázka nebyla nalezena.");
+
+            PermissionHelper.EnsureTaskLeaderAccess(roles, task.WorkType, "Nemáte oprávnění přiřadit tuto zakázku.");
 
             if (userID != null)
             {
                var roleName = task.WorkType.GetRoleName();
 
-                if (!roles.Contains(roleName) && !roles.Contains($"Leader {roleName}") && !roles.Contains("Admin"))
+                if (!roles.Contains(roleName) && !roles.Contains($"Leader {roleName}"))
                     throw new Exception("Uživatel nemá oprávnění pro tento typ zakázky."); 
             }
 
