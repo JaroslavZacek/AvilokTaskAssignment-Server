@@ -7,11 +7,12 @@
       "RelativeMoniker": "D:0:0:{8E88A849-C2ED-0BD5-1124-4616082E5BAB}|AvilokTaskAssignment.Api\\AvilokTaskAssignment.Api.csproj|solutionrelative:aviloktaskassignment.api\\controllers\\taskcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8E88A849-C2ED-0BD5-1124-4616082E5BAB}|AvilokTaskAssignment.Api\\AvilokTaskAssignment.Api.csproj|c:\\users\\jaros\\documents\\github\\aviloktaskassignment-server\\aviloktaskassignment\\aviloktaskassignment.api\\managers\\taskmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8E88A849-C2ED-0BD5-1124-4616082E5BAB}|AvilokTaskAssignment.Api\\AvilokTaskAssignment.Api.csproj|solutionrelative:aviloktaskassignment.api\\managers\\taskmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8E88A849-C2ED-0BD5-1124-4616082E5BAB}|AvilokTaskAssignment.Api\\AvilokTaskAssignment.Api.csproj|c:\\users\\jaros\\documents\\github\\aviloktaskassignment-server\\aviloktaskassignment\\aviloktaskassignment.api\\managers\\taskcommentmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8E88A849-C2ED-0BD5-1124-4616082E5BAB}|AvilokTaskAssignment.Api\\AvilokTaskAssignment.Api.csproj|solutionrelative:aviloktaskassignment.api\\managers\\taskcommentmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/AvilokTaskDatabase/True/SqlTable/dbo.TaskComents.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+      "AbsoluteMoniker": "D:0:0:{8E88A849-C2ED-0BD5-1124-4616082E5BAB}|AvilokTaskAssignment.Api\\AvilokTaskAssignment.Api.csproj|c:\\users\\jaros\\documents\\github\\aviloktaskassignment-server\\aviloktaskassignment\\aviloktaskassignment.api\\interfaces\\itaskcommentmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8E88A849-C2ED-0BD5-1124-4616082E5BAB}|AvilokTaskAssignment.Api\\AvilokTaskAssignment.Api.csproj|solutionrelative:aviloktaskassignment.api\\interfaces\\itaskcommentmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8E88A849-C2ED-0BD5-1124-4616082E5BAB}|AvilokTaskAssignment.Api\\AvilokTaskAssignment.Api.csproj|c:\\users\\jaros\\documents\\github\\aviloktaskassignment-server\\aviloktaskassignment\\aviloktaskassignment.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -25,31 +26,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "dbo.TaskComents [Data]",
-              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/AvilokTaskDatabase/True/SqlTable/dbo.TaskComents.sql",
-              "ToolTip": "dbo.TaskComents [Data]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2026-06-13T19:58:58.637Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "TaskManager.cs",
-              "DocumentMoniker": "C:\\Users\\jaros\\Documents\\GitHub\\AvilokTaskAssignment-Server\\AvilokTaskAssignment\\AvilokTaskAssignment.Api\\Managers\\TaskManager.cs",
-              "RelativeDocumentMoniker": "AvilokTaskAssignment.Api\\Managers\\TaskManager.cs",
-              "ToolTip": "C:\\Users\\jaros\\Documents\\GitHub\\AvilokTaskAssignment-Server\\AvilokTaskAssignment\\AvilokTaskAssignment.Api\\Managers\\TaskManager.cs",
-              "RelativeToolTip": "AvilokTaskAssignment.Api\\Managers\\TaskManager.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAA1wG4AAAA6AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-13T18:37:46.34Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -58,9 +36,35 @@
               "RelativeDocumentMoniker": "AvilokTaskAssignment.Api\\Controllers\\TaskController.cs",
               "ToolTip": "C:\\Users\\jaros\\Documents\\GitHub\\AvilokTaskAssignment-Server\\AvilokTaskAssignment\\AvilokTaskAssignment.Api\\Controllers\\TaskController.cs",
               "RelativeToolTip": "AvilokTaskAssignment.Api\\Controllers\\TaskController.cs",
-              "ViewState": "AgIAADMAAAAAAAAAAAAowEkAAAAWAAAAAAAAAA==",
+              "ViewState": "AgIAALsAAAAAAAAAAAAIwNsAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-13T09:29:51.318Z",
+              "WhenOpened": "2026-06-13T21:30:38.919Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TaskCommentManager.cs",
+              "DocumentMoniker": "C:\\Users\\jaros\\Documents\\GitHub\\AvilokTaskAssignment-Server\\AvilokTaskAssignment\\AvilokTaskAssignment.Api\\Managers\\TaskCommentManager.cs",
+              "RelativeDocumentMoniker": "AvilokTaskAssignment.Api\\Managers\\TaskCommentManager.cs",
+              "ToolTip": "C:\\Users\\jaros\\Documents\\GitHub\\AvilokTaskAssignment-Server\\AvilokTaskAssignment\\AvilokTaskAssignment.Api\\Managers\\TaskCommentManager.cs",
+              "RelativeToolTip": "AvilokTaskAssignment.Api\\Managers\\TaskCommentManager.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAiwEgAAABbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-13T21:22:17.808Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ITaskCommentManager.cs",
+              "DocumentMoniker": "C:\\Users\\jaros\\Documents\\GitHub\\AvilokTaskAssignment-Server\\AvilokTaskAssignment\\AvilokTaskAssignment.Api\\Interfaces\\ITaskCommentManager.cs",
+              "RelativeDocumentMoniker": "AvilokTaskAssignment.Api\\Interfaces\\ITaskCommentManager.cs",
+              "ToolTip": "C:\\Users\\jaros\\Documents\\GitHub\\AvilokTaskAssignment-Server\\AvilokTaskAssignment\\AvilokTaskAssignment.Api\\Interfaces\\ITaskCommentManager.cs",
+              "RelativeToolTip": "AvilokTaskAssignment.Api\\Interfaces\\ITaskCommentManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-13T21:20:32.933Z",
               "EditorCaption": ""
             },
             {
