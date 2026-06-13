@@ -32,7 +32,7 @@ namespace AvilokTaskAssignment.Api.Controllers
         #region Get
         // ------------------------------------------------------------------------------------------------------
         // Get metody pro zakázky
-        // ------------------------------------------------------------------------------------------------------;
+        // ------------------------------------------------------------------------------------------------------
 
         /// <summary>
         /// Vypíše všechny úkoly, které jsou v systému. Frontend bude rozdělovat úkoly do kategorií podle WorkType.
@@ -175,6 +175,10 @@ namespace AvilokTaskAssignment.Api.Controllers
 
         #region Delete
 
+        // ------------------------------------------------------------------------------------------------------
+        // Delete metody pro zakázky
+        // ------------------------------------------------------------------------------------------------------
+
         /// <summary>
         /// Metoda pro smazání úkolu. Smaže úkol z databáze. Používá se pro odstranění neaktuálních nebo chybně vytvořených úkolů.
         /// Prozatím pro všechny. Časem by bylo možné přidat oprávnění, aby úkol mohl smazat pouze jeho tvůrce nebo administrátor.
@@ -191,8 +195,29 @@ namespace AvilokTaskAssignment.Api.Controllers
             return NoContent();
         }
 
+        // ------------------------------------------------------------------------------------------------------
+        // Delete metody pro komentáře k zakázkám
+        // ------------------------------------------------------------------------------------------------------
 
-        // Sem bude časem přidána metoda pro odhlášení pracovníka z úkolu, která změní stav úkolu zpět na "New" a odstraní přiřazení uživatele.
+        /// <summary>
+        /// Metoda pro smazání komentáře. Vymaže komentář z databáze pokud je přihlášená osoba admin nebo leader zakázky, kde je komentář.
+        /// </summary>
+        [HttpDelete("comments/{commentId}")]
+        [Authorize(Roles = "Admin, Leader Developer, Leader Graphic, Leader Story")]
+        public async Task<IActionResult> DeleteComment(Guid commentId)
+        {
+            var roles = User
+                .FindAll(ClaimTypes.Role)
+                .Select(r => r.Value)
+                .ToList();
+
+            await _taskCommentManager.DeleteCommentAsync(commentId, roles);
+
+            return Ok(new
+            {
+                Message = "Komentář byl smazán"
+            });
+        }
         #endregion
     }
 }
