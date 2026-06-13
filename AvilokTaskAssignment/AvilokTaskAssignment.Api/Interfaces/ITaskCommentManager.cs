@@ -9,5 +9,7 @@ namespace AvilokTaskAssignment.Api.Interfaces
         Task AddCommentAsync(Guid taskId, Guid authorId, string text, List<string> roles);
 
         Task DeleteCommentAsync(Guid commentId, List<string> roles);
+
+        Task UpdateCommentAsync(Guid commentId, string text, List<string> roles);
     }
 }
