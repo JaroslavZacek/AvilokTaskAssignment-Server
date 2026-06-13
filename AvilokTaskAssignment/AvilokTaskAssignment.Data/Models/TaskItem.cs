@@ -65,5 +65,7 @@ namespace AvilokTaskAssignment.Data.Models
         /// Uživatel, kterému je zakázka přiřazena.
         /// </summary>
         public ApplicationUser AssignedUser { get; set; }
+
+        public ICollection<TaskComent> Coments { get; set; } = new List<TaskComent>();
     }
 }
