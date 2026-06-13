@@ -9,5 +9,7 @@ namespace AvilokTaskAssignment.Data.Interfaces
     public interface ITaskCommentRepository : IBaseRepository<TaskComment>
     {
         Task<IEnumerable<TaskComment>> GetByTaskIdAsync(Guid taskId);
+
+        Task<TaskComment?> GetWithTaskAsync(Guid commentId);
     }
 }
