@@ -98,8 +98,6 @@ namespace AvilokTaskAssignment.Api.Managers
         {
             var task = await _taskRepository.GetByIdAsync(taskId);
 
-            //var leaderRole = GetLeaderRoleName(task.WorkType);
-
             var leaderRole = task.WorkType.GetLeaderRoleName();
 
             if (!roles.Contains("Admin") && !roles.Contains(leaderRole))
