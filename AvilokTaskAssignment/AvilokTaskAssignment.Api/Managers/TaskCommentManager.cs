@@ -67,5 +67,28 @@ namespace AvilokTaskAssignment.Api.Managers
             await _commentRepository.SaveChangesAsync();
         }
         #endregion
+
+        #region Delete
+        /// <summary>
+        /// Vymaže komentář, pokud je přihlášená osoba admin nebo leader pro danou zakázku.
+        /// </summary>
+        public async Task DeleteCommentAsync(Guid commentId, List<string> roles)
+        {
+            var comment = await _commentRepository.GetWithTaskAsync(commentId);
+
+            if (comment == null)
+                throw new Exception("Komentář nebyl nalezen.");
+
+            var leaderRole = comment.Task.WorkType.GetLeaderRoleName();
+
+            if (!roles.Contains("Admin") && !roles.Contains(leaderRole))
+                throw new Exception("Nemáte oprávnění smazat tento komentář.");
+
+            _commentRepository.Remove(comment);
+
+            await _commentRepository.SaveChangesAsync();
+        }
+
+        #endregion
     }
 }
