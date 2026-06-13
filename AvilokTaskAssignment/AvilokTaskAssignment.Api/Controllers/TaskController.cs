@@ -19,20 +19,26 @@ namespace AvilokTaskAssignment.Api.Controllers
     public class TaskController : ControllerBase
     {
         private readonly ITaskManager _taskManager;
+        private readonly ITaskCommentManager _taskCommentManager;
 
-        public TaskController(ITaskManager taskManager)
+        public TaskController(ITaskManager taskManager, ITaskCommentManager taskCommentManager)
         {
             _taskManager = taskManager;
+            _taskCommentManager = taskCommentManager;
         }
 
-        
+
 
         #region Get
+        // ------------------------------------------------------------------------------------------------------
+        // Get metody pro zakázky
+        // ------------------------------------------------------------------------------------------------------;
 
         /// <summary>
         /// Vypíše všechny úkoly, které jsou v systému. Frontend bude rozdělovat úkoly do kategorií podle WorkType.
         /// </summary>
         [HttpGet]
+        [Authorize]
         public async Task<ActionResult<IEnumerable<TaskListDto>>> GetTasks([FromQuery] 
             WorkType? workType,
             Guid? createdById,
@@ -47,6 +53,7 @@ namespace AvilokTaskAssignment.Api.Controllers
         /// Vypíše detail úkolu podle jeho ID. Detail obsahuje všechny informace o úkolu, včetně jména a ID uživatele, kterému je úkol přiřazen, a jména a ID uživatele, který úkol vytvořil.
         /// </summary>
         [HttpGet("{taskId}")]
+        [Authorize]
         public async Task<ActionResult<TaskDetailDto>> GetTaskDetail(Guid taskId)
         {
             var task = await _taskManager.GetTaskDetailAsync(taskId);
@@ -57,9 +64,30 @@ namespace AvilokTaskAssignment.Api.Controllers
             return Ok(task);
         }
 
+        // ------------------------------------------------------------------------------------------------------
+        // Get metody pro komentáře k zakázkám
+        // ------------------------------------------------------------------------------------------------------
+
+        /// <summary>
+        /// Vypíše všechny komentáře k úkolu podle ID úkolu.
+        /// </summary>
+        [HttpGet("{takId}/comments")]
+        [Authorize]
+        public async Task<ActionResult<IEnumerable<CommentDto>>> GetComments(Guid taskId)
+        {
+            var comments = await _taskCommentManager.GetCommentsAsync(taskId);
+
+            return Ok(comments);
+        }
+
         #endregion
 
         #region Post
+
+        // ------------------------------------------------------------------------------------------------------
+        // Post metody pro zakázky
+        // ------------------------------------------------------------------------------------------------------
+
         /// <summary>
         /// Vytvoří nový úkol.
         /// </summary>
@@ -74,13 +102,31 @@ namespace AvilokTaskAssignment.Api.Controllers
             return Ok(task);
         }
 
-        
+        // -------------------------------------------------------------------------------------------------------
+        // Post metody pro komentáře k zakázkám
+        // -------------------------------------------------------------------------------------------------------
+
+        [HttpPost("{taskId}/comments")]
+        [Authorize]
+        public async Task<IActionResult> AddComment(Guid taskId, [FromBody] CreateCommentDto dto)
+        {
+            var authorId = Guid.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)!);
+
+            await _taskCommentManager.AddCommentAsync(taskId, authorId, dto.Text);
+
+            return Ok(new
+            {
+                Massage = "Komentář byl úspěšně přidán k zakázce."
+            });
+        }
+
+
 
         #endregion
 
         #region Put
 
-        
+
 
 
         #endregion
