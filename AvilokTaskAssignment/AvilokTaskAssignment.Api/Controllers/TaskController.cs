@@ -107,12 +107,15 @@ namespace AvilokTaskAssignment.Api.Controllers
         // -------------------------------------------------------------------------------------------------------
 
         [HttpPost("{taskId}/comments")]
-        [Authorize]
+        [Authorize(Roles = "Admin, Leader Developer, Leader Graphic, Leader Story")]
         public async Task<IActionResult> AddComment(Guid taskId, [FromBody] CreateCommentDto dto)
         {
             var authorId = Guid.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)!);
 
-            await _taskCommentManager.AddCommentAsync(taskId, authorId, dto.Text);
+            var roles = User.FindAll(ClaimTypes.Role).Select(r => r.Value).ToList();
+
+
+            await _taskCommentManager.AddCommentAsync(taskId, authorId, dto.Text, roles);
 
             return Ok(new
             {
