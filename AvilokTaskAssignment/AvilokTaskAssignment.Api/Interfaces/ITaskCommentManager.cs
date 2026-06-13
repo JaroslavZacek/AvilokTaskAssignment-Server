@@ -6,6 +6,6 @@ namespace AvilokTaskAssignment.Api.Interfaces
     {
         Task<IEnumerable<CommentDto>> GetCommentsAsync(Guid taskId);
 
-        Task AddCommentAsync(Guid taskId, Guid authorId, string text);
+        Task AddCommentAsync(Guid taskId, Guid authorId, string text, List<string> roles);
     }
 }
