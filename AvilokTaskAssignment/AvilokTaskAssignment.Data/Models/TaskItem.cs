@@ -65,7 +65,9 @@ namespace AvilokTaskAssignment.Data.Models
         /// Uživatel, kterému je zakázka přiřazena.
         /// </summary>
         public ApplicationUser AssignedUser { get; set; }
-
+        /// <summary>
+        /// Komentáře k zakázce. Tento seznam bude obsahovat všechny komentáře, které byly přidány k zakázce.
+        /// </summary>
         public ICollection<TaskComent> Coments { get; set; } = new List<TaskComent>();
     }
 }

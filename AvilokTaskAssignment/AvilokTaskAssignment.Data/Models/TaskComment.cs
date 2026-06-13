@@ -4,25 +4,25 @@ using System.Text;
 
 namespace AvilokTaskAssignment.Data.Models
 {
-    public class TaskComent
+    public class TaskComment
     {
-        
         public Guid Id { get; set; }
 
-        // -----------------
-        // Vztah k zakázce
-        // -----------------
+        // --------------------------
+        // Zakázka
+        // --------------------------
         public Guid TaskId { get; set; }
-        public TaskItem Task { get; set; } = null;
+        public TaskItem Task { get; set; } = null!;
 
-        // -----------------
-        // Autor komentáře
-        // -----------------
+        // --------------------------
+        // Autor
+        // --------------------------
         public Guid AuthorId { get; set; }
-        public ApplicationUser Author { get; set; } = null;
+        public ApplicationUser Author { get; set; } = null!;
 
         public string Text { get; set; } = string.Empty;
 
         public DateTime CreatedAt { get; set; }
+
     }
 }
