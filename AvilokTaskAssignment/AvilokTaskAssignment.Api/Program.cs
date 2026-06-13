@@ -57,6 +57,8 @@ builder.Services.AddScoped<ITaskRepository, TaskRepository>();
 builder.Services.AddScoped<IAuthManager, AuthManager>();
 builder.Services.AddScoped<ITaskManager, TaskManager>();
 builder.Services.AddScoped<IUserManagerService, UserManagerService>();
+builder.Services.AddScoped<ITaskCommentRepository, TaskCommentRepository>();
+builder.Services.AddScoped<ITaskCommentManager, TaskCommentManager>();
 
 #endregion
 
