@@ -71,7 +71,7 @@ namespace AvilokTaskAssignment.Api.Controllers
         /// <summary>
         /// Vypíše všechny komentáře k úkolu podle ID úkolu.
         /// </summary>
-        [HttpGet("{takId}/comments")]
+        [HttpGet("{taskId}/comments")]
         [Authorize]
         public async Task<ActionResult<IEnumerable<CommentDto>>> GetComments(Guid taskId)
         {
