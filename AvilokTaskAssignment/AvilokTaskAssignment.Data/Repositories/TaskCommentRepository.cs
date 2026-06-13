@@ -23,5 +23,12 @@ namespace AvilokTaskAssignment.Data.Repositories
                 .OrderBy(c => c.CreatedAt)
                 .ToListAsync();
         }
+
+        public async Task<TaskComment?> GetWithTaskAsync(Guid commentId)
+        {
+            return await _context.TaskComents
+                .Include(c => c.Task)
+                .FirstOrDefaultAsync(c => c.Id == commentId);
+        }
     }
 }
