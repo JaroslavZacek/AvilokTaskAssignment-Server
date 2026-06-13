@@ -22,5 +22,10 @@ namespace AvilokTaskAssignment.Data.Models
         /// Zakázky, které jsou přiřazeny tomuto uživateli.
         /// </summary>
         public ICollection<TaskItem> AssignedTasks { get; set; }
+
+        /// <summary>
+        /// Komentáře k zakázkám vytvořené tímto uživatelem.
+        /// </summary>
+        public ICollection<TaskComment> Comments { get; set; } = new List<TaskComment>();
     }
 }
