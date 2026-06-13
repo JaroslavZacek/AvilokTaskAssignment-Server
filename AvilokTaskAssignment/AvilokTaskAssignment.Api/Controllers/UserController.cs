@@ -10,7 +10,7 @@ namespace AvilokTaskAssignment.Api.Controllers
 {
     [ApiController]
     [Route("api/users")]
-    [Authorize(Roles ="Admin, Leader Developer, Leader Graphic, Leader Story")]
+    /*[Authorize(Roles ="Admin, Leader Developer, Leader Graphic, Leader Story")]*/
     public class UserController : ControllerBase
     {
         private readonly IUserManagerService _userManagerService;
@@ -26,6 +26,7 @@ namespace AvilokTaskAssignment.Api.Controllers
         /// Crud operace pro získání detailů uživatele podle jeho ID.
         /// </summary>
         [HttpGet("{userId}")]
+        [Authorize(Roles = "Admin, Leader Developer, Leader Graphic, Leader Story")]
         public async Task<ActionResult<UserDetailDto>> GetDetailUser(Guid userId)
         {
             var user = await _userManagerService.GetDetailUserAsync(userId);
@@ -37,6 +38,7 @@ namespace AvilokTaskAssignment.Api.Controllers
         /// Crud operace pro získání všech uživatelů.
         /// </summary>
         [HttpGet]
+        [Authorize]
         public async Task<IActionResult> GetUsers()
         {
             var users = await _userManagerService.GetUsersAsync();
@@ -51,6 +53,7 @@ namespace AvilokTaskAssignment.Api.Controllers
         /// Crud operace pro přiřazení role uživateli.
         /// </summary>
         [HttpPost("{userId}/assign-role")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> AssignRole(Guid userId, [FromBody] AssignRoleDto dto)
         {
             await _userManagerService.AssignRoleAsync(userId, dto.RoleName);
@@ -71,6 +74,7 @@ namespace AvilokTaskAssignment.Api.Controllers
         /// Crud operace pro odebrání role uživateli.
         /// </summary>
         [HttpDelete("{userId}/remove-role")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> RemoveRole(Guid userId, [FromBody] RemoveRoleDto dto)
         {
             await _userManagerService.RemoveRoleAsync(userId, dto.RoleName);
