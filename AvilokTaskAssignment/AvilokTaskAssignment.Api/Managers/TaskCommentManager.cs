@@ -48,10 +48,7 @@ namespace AvilokTaskAssignment.Api.Managers
             if (task == null)
                 throw new Exception("Zakázka nebyla nalezena.");
 
-            var leaderRole = task.WorkType.GetLeaderRoleName();
-
-            if (!roles.Contains("Admin") && !roles.Contains(leaderRole))
-                throw new Exception("Nemáte oprávnění přidávat komentáře k této zakázce.");
+            PermissionHelper.EnsureTaskLeaderAccess(roles, task.WorkType, "Nemáte oprávnění přidávat komentáře k této zakázce.");
 
             var comment = new TaskComment
             {
@@ -80,10 +77,7 @@ namespace AvilokTaskAssignment.Api.Managers
             if (comment == null)
                 throw new Exception("Komentář nebyl nalezen.");
 
-            var leaderRole = comment.Task.WorkType.GetLeaderRoleName();
-
-            if (!roles.Contains("Admin") && !roles.Contains(leaderRole))
-                throw new Exception("Nemáte oprávnění upravi tento komentář.");
+            PermissionHelper.EnsureTaskLeaderAccess(roles, comment.Task.WorkType, "Nemáte oprávnění upravi tento komentář.");
 
             comment.Text = text;
 
@@ -105,10 +99,7 @@ namespace AvilokTaskAssignment.Api.Managers
             if (comment == null)
                 throw new Exception("Komentář nebyl nalezen.");
 
-            var leaderRole = comment.Task.WorkType.GetLeaderRoleName();
-
-            if (!roles.Contains("Admin") && !roles.Contains(leaderRole))
-                throw new Exception("Nemáte oprávnění smazat tento komentář.");
+            PermissionHelper.EnsureTaskLeaderAccess(roles, comment.Task.WorkType, "Nemáte oprávnění smazat tento komentář.");
 
             _commentRepository.Remove(comment);
 
