@@ -68,6 +68,6 @@ namespace AvilokTaskAssignment.Data.Models
         /// <summary>
         /// Komentáře k zakázce. Tento seznam bude obsahovat všechny komentáře, které byly přidány k zakázce.
         /// </summary>
-        public ICollection<TaskComent> Coments { get; set; } = new List<TaskComent>();
+        public ICollection<TaskComment> Coments { get; set; } = new List<TaskComment>();
     }
 }
