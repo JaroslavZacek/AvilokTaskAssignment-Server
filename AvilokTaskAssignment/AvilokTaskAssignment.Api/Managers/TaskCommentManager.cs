@@ -68,6 +68,32 @@ namespace AvilokTaskAssignment.Api.Managers
         }
         #endregion
 
+        #region Path
+
+        /// <summary>
+        /// Metoda upravující komentář.
+        /// </summary>
+        public async Task UpdateCommentAsync(Guid commentId, string text, List<string> roles)
+        {
+            var comment = await _commentRepository.GetWithTaskAsync(commentId);
+
+            if (comment == null)
+                throw new Exception("Komentář nebyl nalezen.");
+
+            var leaderRole = comment.Task.WorkType.GetLeaderRoleName();
+
+            if (!roles.Contains("Admin") && !roles.Contains(leaderRole))
+                throw new Exception("Nemáte oprávnění upravi tento komentář.");
+
+            comment.Text = text;
+
+            _commentRepository.Update(comment);
+
+            await _commentRepository.SaveChangesAsync();
+        }
+
+        #endregion
+
         #region Delete
         /// <summary>
         /// Vymaže komentář, pokud je přihlášená osoba admin nebo leader pro danou zakázku.
