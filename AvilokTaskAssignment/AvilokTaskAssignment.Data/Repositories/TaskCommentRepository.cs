@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace AvilokTaskAssignment.Data.Repositories
 {
-    public class TaskCommentRepository : BaseRepository<TaskComment>
+    public class TaskCommentRepository : BaseRepository<TaskComment>, ITaskCommentRepository
     {
         public TaskCommentRepository(ApplicationDbContext context) : base(context)
         {
