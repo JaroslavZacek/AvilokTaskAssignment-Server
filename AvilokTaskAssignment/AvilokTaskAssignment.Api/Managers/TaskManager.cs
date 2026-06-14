@@ -84,7 +84,6 @@ namespace AvilokTaskAssignment.Api.Managers
 
         #region PUT
 
-        
 
         #endregion
 
@@ -130,6 +129,32 @@ namespace AvilokTaskAssignment.Api.Managers
             task.Status = newStatus;
 
             _taskRepository.Update(task);
+            await _taskRepository.SaveChangesAsync();
+        }
+
+        /// <summary>
+        /// Metoda pro úpravu short a long description, worktype a deadline
+        /// </summary>
+        public async Task UpdateTaskAsync(Guid taskId, UpdateTaskDto dto, List<string> roles)
+        {
+            var task = await _taskRepository.GetByIdAsync(taskId);
+
+            if (task == null)
+                throw new Exception("Zakázka nebyla nalezena.");
+
+            PermissionHelper.EnsureTaskLeaderAccess(roles, task.WorkType, "Nemáte oprávnění upravit zakázku.");
+
+            if (dto.WorkType != task.WorkType && !roles.Contains("Admin"))
+                throw new Exception("Pouze administrátor může změnit typ zakázky");
+
+            task.ShortDescription = dto.ShortDescription;
+
+            task.LongDescription = dto.LongDescription;
+
+            task.WorkType = dto.WorkType;
+
+            task.Deadline = dto.Deadline;
+
             await _taskRepository.SaveChangesAsync();
         }
 
