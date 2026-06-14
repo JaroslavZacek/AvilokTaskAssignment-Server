@@ -136,6 +136,10 @@ namespace AvilokTaskAssignment.Api.Controllers
 
         #region Patch
 
+        // ------------------------------------------------------------------------------------------------------
+        // Patch metody pro zakázky
+        // ------------------------------------------------------------------------------------------------------
+
         /// <summary>
         /// Přiřadí zakázku uživateli.
         /// </summary>
@@ -161,6 +165,7 @@ namespace AvilokTaskAssignment.Api.Controllers
         /// Prozatím pro všechny. Časem by bylo možné přidat oprávnění, aby stav mohl měnit pouze uživatel, kterému je úkol přiřazen,leader nebo administrátor.
         /// </summary>
         [HttpPatch("{taskId}/status")]
+        [Authorize]
         public async Task<IActionResult> ChanceStatus(Guid taskId, [FromBody] UpdateTaskStatusDto newStatus)
         {
             await _taskManager.UpdateStatusAsync(taskId, newStatus.Status);
@@ -168,6 +173,23 @@ namespace AvilokTaskAssignment.Api.Controllers
             return Ok(new
             {
                 massage = "Status byl úspěšně změněn"
+            });
+        }
+
+        // ------------------------------------------------------------------------------------------------------
+        // Patch metody pro komentáře k zakázkám
+        // ------------------------------------------------------------------------------------------------------
+        [HttpPatch("comments/{commentId}")]
+        [Authorize(Roles = "Admin, Leader Developer, Leader Graphic, Leader Story")]
+        public async Task<IActionResult> UpdateComment(Guid commentId, [FromBody] UpdateCommentDto dto)
+        {
+            var roles = User.FindAll(ClaimTypes.Role).Select(r => r.Value).ToList();
+
+            await _taskCommentManager.UpdateCommentAsync(commentId, dto.Text, roles);
+
+            return Ok(new
+            {
+                Message = "Komentář byl upraven."
             });
         }
 
