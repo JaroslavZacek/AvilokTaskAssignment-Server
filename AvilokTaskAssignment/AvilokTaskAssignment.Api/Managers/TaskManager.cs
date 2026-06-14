@@ -161,17 +161,18 @@ namespace AvilokTaskAssignment.Api.Managers
         #endregion
 
         #region Delete
-        public async Task<bool> DeleteTaskAsync(Guid taskId)
+        public async Task DeleteTaskAsync(Guid taskId, List<string> roles)
         {
             var task = await _taskRepository.GetByIdAsync(taskId);
 
             if (task == null)
-                return false;
+                throw new Exception("Zakázka nebyla nalezena.");
+
+            PermissionHelper.EnsureTaskLeaderAccess(roles, task.WorkType, "Nemáte oprávnění smazat zakázku.");
 
             _taskRepository.Remove(task);
-            await _taskRepository.SaveChangesAsync();
 
-            return true;
+            await _taskRepository.SaveChangesAsync();
         }
         #endregion
 
