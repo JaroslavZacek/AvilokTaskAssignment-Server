@@ -220,18 +220,19 @@ namespace AvilokTaskAssignment.Api.Controllers
 
         /// <summary>
         /// Metoda pro smazání úkolu. Smaže úkol z databáze. Používá se pro odstranění neaktuálních nebo chybně vytvořených úkolů.
-        /// Prozatím pro všechny. Časem by bylo možné přidat oprávnění, aby úkol mohl smazat pouze jeho tvůrce nebo administrátor.
         /// </summary>
         [HttpDelete("{taskId}")]
         [Authorize(Roles = "Admin, Leader Developer, Leader Graphic, Leader Story")]
         public async Task<IActionResult> DeleteTask(Guid taskId)
         {
-            var deleted = await _taskManager.DeleteTaskAsync(taskId);
+            var roles = User.FindAll(ClaimTypes.Role).Select(r => r.Value).ToList();
 
-            if (!deleted)
-                return NotFound();
+            await _taskManager.DeleteTaskAsync(taskId, roles);
 
-            return NoContent();
+            return Ok(new
+            {
+                Message = "Zakázka byla smazána."
+            });
         }
 
         // ------------------------------------------------------------------------------------------------------
