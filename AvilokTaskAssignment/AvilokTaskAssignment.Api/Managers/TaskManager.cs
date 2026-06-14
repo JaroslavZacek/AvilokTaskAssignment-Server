@@ -168,6 +168,9 @@ namespace AvilokTaskAssignment.Api.Managers
             if (task == null)
                 throw new Exception("Zakázka nebyla nalezena.");
 
+            if (task.Status == TaskStatus.Finished)
+                throw new Exception("Dokončenou zakázku nelze smazat.");
+
             PermissionHelper.EnsureTaskLeaderAccess(roles, task.WorkType, "Nemáte oprávnění smazat zakázku.");
 
             _taskRepository.Remove(task);
