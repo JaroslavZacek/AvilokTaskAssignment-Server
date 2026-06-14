@@ -133,7 +133,7 @@ namespace AvilokTaskAssignment.Api.Managers
         }
 
         /// <summary>
-        /// Metoda pro úpravu short a long description, worktype a deadline
+        /// Metoda pro úpravu short a long description a deadline. Adminovy umožní měnit i worktype
         /// </summary>
         public async Task UpdateTaskAsync(Guid taskId, UpdateTaskDto dto, List<string> roles)
         {

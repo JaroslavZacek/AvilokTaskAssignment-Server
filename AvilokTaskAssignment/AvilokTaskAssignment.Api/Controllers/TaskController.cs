@@ -176,6 +176,23 @@ namespace AvilokTaskAssignment.Api.Controllers
             });
         }
 
+        /// <summary>
+        /// Leadrům umožní měnit short a long description a deadline, adminovy umožní měnit i worktype zakázky.
+        /// </summary>
+        [HttpPatch("{taskId}")]
+        [Authorize(Roles = "Admin, Leader Developer, Leader Graphic, Leader Story")]
+        public async Task<IActionResult> UpdateTask(Guid taskId, [FromBody] UpdateTaskDto dto)
+        {
+            var roles = User.FindAll(ClaimTypes.Role).Select(r => r.Value).ToList();
+
+            await _taskManager.UpdateTaskAsync(taskId, dto, roles);
+
+            return Ok(new
+            {
+                Message = "Zakázka byla upravena."
+            });
+        }
+
         // ------------------------------------------------------------------------------------------------------
         // Patch metody pro komentáře k zakázkám
         // ------------------------------------------------------------------------------------------------------
