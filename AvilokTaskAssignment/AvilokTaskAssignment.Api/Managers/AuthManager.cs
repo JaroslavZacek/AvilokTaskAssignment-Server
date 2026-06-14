@@ -19,9 +19,6 @@ namespace AvilokTaskAssignment.Api.Managers
         /// <summary>
         /// Registrační metoda pro uživatele. Volá se, když nový uživatel chce vytvořit účet v aplikaci.
         /// </summary>
-        /// <param name="registerUserDto"></param>
-        /// <returns></returns>
-        /// <exception cref="Exception">Exception při nepovedené registraci. Vypíše všechny za s sebou.</exception>
         public async Task RegisterAsync(RegisterUserDto registerUserDto)
         {
             var user = new ApplicationUser
@@ -41,9 +38,6 @@ namespace AvilokTaskAssignment.Api.Managers
         /// <summary>
         /// Přihlašovací metoda pro uživatele. Volá se, když uživatel zadá své přihlašovací údaje a chce se přihlásit do aplikace.
         /// </summary>
-        /// <param name="loginDto"></param>
-        /// <returns>Přihlášení uživatele</returns>
-        /// <exception cref="UnauthorizedAccessException">Exception při zadání neplatných přihlašovacích údajů.</exception>
         public async Task LoginAsync(LoginDto loginDto)
         {
             var result = await _signInManager.PasswordSignInAsync(
@@ -59,7 +53,6 @@ namespace AvilokTaskAssignment.Api.Managers
         /// <summary>
         /// Metoda pro odhlášení uživatele. Volá se, když uživatel chce ukončit svou relaci a odhlásit se z aplikace.
         /// </summary>
-        /// <returns>Odhlášení uživatele</returns>
         public async Task LogoutAsync()
         {
             await _signInManager.SignOutAsync();

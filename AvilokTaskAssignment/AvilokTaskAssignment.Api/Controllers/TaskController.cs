@@ -106,6 +106,9 @@ namespace AvilokTaskAssignment.Api.Controllers
         // Post metody pro komentáře k zakázkám
         // -------------------------------------------------------------------------------------------------------
 
+        /// <summary>
+        /// Přidá nový komentář k existující zakázce (úkolu).
+        /// </summary>
         [HttpPost("{taskId}/comments")]
         [Authorize(Roles = "Admin, Leader Developer, Leader Graphic, Leader Story")]
         public async Task<IActionResult> AddComment(Guid taskId, [FromBody] CreateCommentDto dto)
@@ -196,6 +199,10 @@ namespace AvilokTaskAssignment.Api.Controllers
         // ------------------------------------------------------------------------------------------------------
         // Patch metody pro komentáře k zakázkám
         // ------------------------------------------------------------------------------------------------------
+
+        /// <summary>
+        /// Aktualizuje text komentáře identifikovaného pomocí <paramref name="commentId"/>.
+        /// </summary>
         [HttpPatch("comments/{commentId}")]
         [Authorize(Roles = "Admin, Leader Developer, Leader Graphic, Leader Story")]
         public async Task<IActionResult> UpdateComment(Guid commentId, [FromBody] UpdateCommentDto dto)

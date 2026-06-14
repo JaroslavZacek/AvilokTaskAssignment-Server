@@ -21,6 +21,9 @@ namespace AvilokTaskAssignment.Api.Controllers
             _userManager = userManager;
         }
 
+        /// <summary>
+        /// Zaregistruje nového uživatele podle poskytnutého DTO.
+        /// </summary>
         [HttpPost("register")]
         public async Task<IActionResult> Register(RegisterUserDto registerUserDto)
         {
@@ -31,6 +34,9 @@ namespace AvilokTaskAssignment.Api.Controllers
             });
         }
 
+        /// <summary>
+        /// Přihlásí uživatele pomocí zadaných přihlašovacích údajů.
+        /// </summary>
         [HttpPost("login")]
         public async Task<IActionResult> Login(LoginDto loginDto)
         {
@@ -41,6 +47,9 @@ namespace AvilokTaskAssignment.Api.Controllers
                 });
         }
 
+        /// <summary>
+        /// Odhlásí aktuálně přihlášeného uživatele asynchronně.
+        /// </summary>
         [HttpPost("logout")]
         public async Task<IActionResult> Logout()
         {
@@ -51,6 +60,9 @@ namespace AvilokTaskAssignment.Api.Controllers
             });
         }
 
+        /// <summary>
+        /// Vrátí informace o právě přihlášeném uživateli.
+        /// </summary>
         [HttpGet("me")]
         [Authorize]
         public async Task<IActionResult> Me()

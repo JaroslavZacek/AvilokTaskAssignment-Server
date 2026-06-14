@@ -92,7 +92,6 @@ namespace AvilokTaskAssignment.Api.Managers
         /// <summary>
         /// Přiřadí zakázku uživateli a změní její stav na "InProgress".
         /// </summary>
-
         public async Task AssignTaskAsync(Guid taskId, Guid? userID, List<string> roles)
         {
             var task = await _taskRepository.GetByIdAsync(taskId);
@@ -161,6 +160,9 @@ namespace AvilokTaskAssignment.Api.Managers
         #endregion
 
         #region Delete
+        /// <summary>
+        /// Smaže zakázku se zadaným identifikátorem
+        /// </summary>
         public async Task DeleteTaskAsync(Guid taskId, List<string> roles)
         {
             var task = await _taskRepository.GetByIdAsync(taskId);
