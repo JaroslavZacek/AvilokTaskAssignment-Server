@@ -21,5 +21,7 @@ namespace AvilokTaskAssignment.Api.Interfaces
 
         Task<bool> DeleteTaskAsync(Guid taskId);
         Task<TaskDetailDto> GetTaskDetailAsync(Guid taskId);
+
+        Task UpdateTaskAsync(Guid taskId, UpdateTaskDto dto, List<string> roles);
     }
 }
