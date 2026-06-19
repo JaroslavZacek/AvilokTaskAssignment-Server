@@ -1,2 +1,2 @@
 # AvilokTaskAssignment-Server
-Task assignment for indie game Avilok
+Task assignment for indii game Avilok
